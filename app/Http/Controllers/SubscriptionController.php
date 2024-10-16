@@ -71,10 +71,16 @@ class SubscriptionController extends Controller
         return redirect()->back()->with('success', 'Inscription réussie.');
     }
 
-    // public function subscriptionValue(SubscriptionRequest $request) {
-    
-    
-    // }
+    public function souscriptionDashboard()
+    {
+
+        $subscriptions = Subscription::all();
+
+        return  view('souscriptionDashboard', ["subscriptions" => $subscriptions]);
+
+
+        // return view('souscriptionDashboard');
+    }
     
 }
 

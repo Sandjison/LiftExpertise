@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Interfaces\ContactInterface;
 use Illuminate\Support\Facades\Auth;
 use App\Interfaces\SubscriptionInterface;
@@ -15,7 +16,6 @@ class AdminController extends Controller
     public function __construct(SubscriptionInterface $subscriptionInterface)
     {
         $this->subscriptionInterface = $subscriptionInterface;
-
     }
 
 
@@ -23,15 +23,5 @@ class AdminController extends Controller
     {
         return view('messageDashboard');
     }
-    public function souscriptionDashboard()
-    {
-
-        $subscriptions = Subscription::all();
-
-        return  view('souscriptionDashboard', ["subscriptions"=>$subscriptions]) ;
-
-
-        // return view('souscriptionDashboard');
-    }
-
+    
 }

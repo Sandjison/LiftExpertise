@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\SubscriptionController;
+use App\Http\Controllers\ContactController;
 use App\Models\Subscription;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\checkRole;
@@ -32,8 +33,8 @@ Route::get('/us', [MainController::class, 'us'])->name('us');
 Route::get('/mission', [MainController::class, 'mission'])->name('mission');
 
 
-Route::get('/messageDashboard', [AdminController::class, 'messageDashboard'])->name('messageDashboard');
-Route::get('/souscriptionDashboard', [AdminController::class, 'souscriptionDashboard'])->name('souscriptionDashboard');
+Route::get('/messageDashboard', [ContactController::class, 'messageDashboard'])->name('messageDashboard');
+Route::get('/souscriptionDashboard', [SubscriptionController::class, 'souscriptionDashboard'])->name('souscriptionDashboard');
 
 
 // Route::middleware('auth')->group(function () {
@@ -48,5 +49,5 @@ Route::post('/registration/processing', [AuthController::class, 'registration'])
 Route::post('/forgottenPassword/processing', [AuthController::class, 'forgottenPassword'])->name('forgottenPassword.process');
 Route::post('/otpCode/processing', [AuthController::class, 'checkOtpCode'])->name('otpCode.process');
 Route::post('/newPassword/processing', [AuthController::class, 'newPassword'])->name('newPassword.process');
-Route::post('/contact/send-mail/processing', [MainController::class, 'contactSendEmail'])->name('sendMail');
+Route::post('/contact/send-mail/processing', [ContactController::class, 'contactSendEmail'])->name('sendMail');
 Route::post('/subscription/processing', [SubscriptionController::class, 'subscription'])->name('subscription.process');

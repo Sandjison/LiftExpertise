@@ -19,6 +19,7 @@ class AdminSeeder extends Seeder
             'name' => 'Admin Lift',
             'email' => 'adminlift@gmail.com',
             'password' => Hash::make('12345678'),
+            'gender' => 'male',
         ]);
     }
 }

@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <title>Tableau de bord Admin</title>
     <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet"
         href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    
 </head>
 
 <body>
@@ -59,8 +61,12 @@
                         <div class="user">
                             <div class=""></div>
                             <span class="fas fa-sign-out-alt"></span>
-                            <span><a href="{{ route('logout') }} " class="logout"><i
-                                        class="ri-logout-box-line"></i>Déconnexion</a></span>
+                            <span>
+                                <a href="{{ route('logout') }} " class="logout">
+                                    <i class="ri-logout-box-line"></i>
+                                    Déconnexion
+                                </a>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -74,6 +80,7 @@
                         <div class="card">
                             <div class="card-head">
                                 <h2>107,200</h2>
+                                {{-- <h2> {{ $subscriptions }} </h2> --}}
                             </div>
                             <div class="card-progress">
                                 <small>Nombre souscription ce
@@ -96,54 +103,39 @@
                         </div>
                     </div>
                     <div class="records table-responsive">
-                        <div class="record-header">
-                            <div class="browse">
-                                <input type="search" placeholder="Recherche" class="record-search">
-                            </div>
-                        </div>
                         <div>
-                            <table width="100%">
+                            <table width="100%" id="datatable" class="stripe">
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th><span class="las la-sort"></span>
+                                        <th>
                                             Nom complet</th>
-                                        <th><span class="las la-sort"></span>
+                                        <th>
                                             Email</th>
-                                        <th><span class="las la-sort"></span>
+                                        <th>
                                             Sexe</th>
-                                        <!-- "Balance" traduit -->
-                                        <!-- <th><span class="las la-sort"></span>
-                                            ACTIONS</th> -->
+                                        <th>
+                                            Date</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($users as $user)
-                                        
-                                    <tr>
-                                        <td> {{$user->id}} </td>
-                                        {{-- <td>#5033</td> --}}
-                                        <td>
-                                            {{$user->name}}
-                                        </td>
-                                        <td>
-                                            {{$user->email}}
-                                        </td>
-                                        <td>
-                                            Homme
-                                        </td>
-                                        <!-- <td>
-                                            <div class="actions">
-                                                <span
-                                                    class="lab la-telegram-plane"></span>
-                                                <span class="las la-eye"></span>
-                                                <span
-                                                    class="las la-ellipsis-v"></span>
-                                            </div>
-                                        </td> -->
-                                    </tr>
+                                        <tr>
+                                            <td> {{ $user->id }} </td>
+                                            <td>
+                                                {{ $user->name }}
+                                            </td>
+                                            <td>
+                                                {{ $user->email }}
+                                            </td>
+                                            <td>
+                                                {{ $user->gender }}
+                                            </td>
+                                            <td>
+                                                {{ $user->created_at }}
+                                            </td>
+                                        </tr>
                                     @endforeach
-
                                 </tbody>
                             </table>
                         </div>
@@ -175,6 +167,31 @@
                     menuItems.forEach(link => link.classList.remove('active'));
                     // Ajoute la classe 'active' uniquement à l'élément cliqué
                     this.classList.add('active');
+                });
+            });
+        </script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#datatable').DataTable({
+                    "paging": false,
+                    "ordering": true,
+                    "info": false,
+                    "searching": true,
+                    "language": {
+                        "search": "" ,
+                        "searchPlaceholder": "Recherche",
+                        "lengthMenu": "_MENU_",
+                        "zeroRecords": "Aucun enregistrement trouvé",
+                        "info": "Affichage de _START_ à _END_ sur _TOTAL_ entrées",
+                        "infoEmpty": "Aucun enregistrement disponible",
+                        "infoFiltered": "(filtré de _MAX_ entrées au total)",
+                        "paginate": {
+                            "previous": "Précédent",
+                            "next": "Suivant"
+                        }
+                    }
                 });
             });
         </script>
@@ -213,7 +230,8 @@
                         <ul class="chat-sidebar-profile-dropdown">
                             <li><a href="#"><i class="ri-user-line"></i>
                                     Profil</a></li>
-                            <li><a href="{{ route('logout') }}"><i class="ri-logout-box-line"></i>Déconnexion</a></li>
+                            <li><a href="{{ route('logout') }}"><i class="ri-logout-box-line"></i>Déconnexion</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>

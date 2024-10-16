@@ -84,6 +84,7 @@
                     </div>
                 </form>
             </div>
+
             <div class="contact_right">
                 <img src="{{ asset('assets/images/3d-casual-life-man-chatting-remotely-with-female-colleague.png') }}"
                     alt="" class="contact_image">

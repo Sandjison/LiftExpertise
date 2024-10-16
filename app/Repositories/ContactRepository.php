@@ -5,6 +5,7 @@ namespace App\Repositories;
 use Illuminate\Support\Facades\Mail;
 use App\Interfaces\ContactInterface;
 use App\Mail\ContactMail;
+use App\Models\Contact;
 
 class ContactRepository implements ContactInterface
 {
@@ -18,7 +19,10 @@ class ContactRepository implements ContactInterface
 
     public function SendContactMail($data)
     {
+        
+        Mail::to("ekoueblasandjison@gmail.com")->send(new ContactMail($data['firstName'], $data['lastName'], $data['email'], $data['subject'], $data['message']));
 
-        Mail::to("ekoueblasandjison@gmail.com")->send(new ContactMail($data['firstname'], $data['lastname'], $data['email'], $data['object'], $data['content']));
+        return Contact::create($data);
+
     }
 }

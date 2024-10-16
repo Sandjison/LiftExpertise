@@ -61,8 +61,6 @@ class MainController extends Controller
         return view('newPassword');
     }
 
-
-
     public function login()
     {
         if (Auth::check())
@@ -109,30 +107,7 @@ class MainController extends Controller
 
         return view('contact');
     }
-    public function contactSendEmail(Request $request)
-    {
-        $data = [
-            "firstname" => $request->firstName,
-            "lastname" => $request->lastName,
-            "email" => $request->email,
-            "object" => $request->subject,
-            "content" => $request->message,
-        ];
-
-        try {
-            $mail = $this->contactInterface->SendContactMail($data);
-
-            if (!$mail) {
-                return back()->with('error', 'Impossible d\'envoyer cet email.');
-            } else {
-                return back()->with('success', 'Email envoyé avec succès');
-            }
-        } catch (\Exception $ex) {
-            return back()->with('error', 'Une erreur s’est produite pendant le traitement. Veuillez réessayer !');
-        }
-
-        // return view('contact');
-    }
+   
     public function us()
     {
         if (Auth::check())

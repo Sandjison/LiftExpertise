@@ -5,7 +5,8 @@
     --color-dark: #202DE6;
     --text-grey: #FFFF;
 }
-.logout{
+
+.logout {
     color: black;
     font-weight: 600;
 }
@@ -17,6 +18,10 @@
     list-style-type: none;
     box-sizing: border-box;
     font-family: 'Merriweather', sans-serif;
+}
+
+.dataTables_filter {
+    margin: 20px;
 }
 
 #menu-toggle {
@@ -425,7 +430,7 @@ table thead th:first-child {
 }
 
 table tbody td {
-    padding: 1rem 0rem;
+    padding: 1rem 14px;
     color: #444;
 }
 
