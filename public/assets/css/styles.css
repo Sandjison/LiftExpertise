@@ -1875,9 +1875,6 @@ SECTION GALERIE
 }
 
 .contact_right_prime {
-    grid-row: 2 / 3;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
@@ -1922,7 +1919,7 @@ SECTION GALERIE
 }
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
     .contact_part {
         grid-template-columns: 1fr;
     }
@@ -1939,7 +1936,6 @@ SECTION GALERIE
         text-align: center;
     }
 }
-
 
 @media screen and (max-width: 340px){
     .email_section span{

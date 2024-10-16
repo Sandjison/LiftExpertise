@@ -1,4 +1,189 @@
 <!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>Tableau de bord Admin</title>
+    <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+</head>
+
+<body>
+
+    @if (Auth::check() && Auth::user()->email == 'adminlift@gmail.com')
+        <input type="checkbox" id="menu-toggle">
+        <div class="sidebar">
+            <div class="side-header">
+                <h3>L<span>iftExpertise</span></h3>
+            </div>
+            <div class="side-content">
+                <div class="profile">
+                    <div class="profile-img bg-img">
+                    </div>
+                    <h4>David Green</h4>
+                </div>
+                <div class="side-menu">
+                    <ul>
+                        <li>
+                            <a href="{{ route('dashboard') }}" class="active">
+                                <span class="las la-home"></span>
+                                <small>Tableau de bord</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('messageDashboard') }}" class="active">
+                                <span class="las la-envelope"></span>
+                                <small>Messagerie</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('souscriptionDashboard') }}" class="active">
+                                <span class="las la-shopping-cart"></span>
+                                <small>Souscription</small>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <header>
+                <div class="header-content">
+                    <label for="menu-toggle">
+                        <span class="las la-bars"></span>
+                    </label>
+                    <div class="header-menu">
+                        <div class="user">
+                            <div class=""></div>
+                            <span class="fas fa-sign-out-alt"></span>
+                            <span><a href="{{ route('logout') }} " class="logout"><i
+                                        class="ri-logout-box-line"></i>Déconnexion</a></span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div class="page-header">
+                    <h1>Tableau de bord</h1>
+                </div>
+                <div class="page-content">
+                    <div class="analytics">
+                        <div class="card">
+                            <div class="card-head">
+                                <h2>107,200</h2>
+                            </div>
+                            <div class="card-progress">
+                                <small>Nombre souscription ce
+                                    mois-ci</small>
+                                <div class="card-indicator">
+                                    <div class="indicator one" style="width: 60%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-head">
+                                <h2>47,500</h2>
+                            </div>
+                            <div class="card-progress">
+                                <small>Nouveaux e-mails reçus</small>
+                                <div class="card-indicator">
+                                    <div class="indicator four" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="records table-responsive">
+                        <div class="record-header">
+                            <div class="browse">
+                                <input type="search" placeholder="Recherche" class="record-search">
+                            </div>
+                        </div>
+                        <div>
+                            <table width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th><span class="las la-sort"></span>
+                                            Nom complet</th>
+                                        <th><span class="las la-sort"></span>
+                                            Email</th>
+                                        <th><span class="las la-sort"></span>
+                                            Sexe</th>
+                                        <!-- "Balance" traduit -->
+                                        <!-- <th><span class="las la-sort"></span>
+                                            ACTIONS</th> -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($users as $user)
+                                        
+                                    <tr>
+                                        <td> {{$user->id}} </td>
+                                        {{-- <td>#5033</td> --}}
+                                        <td>
+                                            {{$user->name}}
+                                        </td>
+                                        <td>
+                                            {{$user->email}}
+                                        </td>
+                                        <td>
+                                            Homme
+                                        </td>
+                                        <!-- <td>
+                                            <div class="actions">
+                                                <span
+                                                    class="lab la-telegram-plane"></span>
+                                                <span class="las la-eye"></span>
+                                                <span
+                                                    class="las la-ellipsis-v"></span>
+                                            </div>
+                                        </td> -->
+                                    </tr>
+                                    @endforeach
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <script>
+            // Sélectionne tous les liens du menu
+            const menuItems = document.querySelectorAll('.side-menu a');
+
+            // Récupère l'URL actuelle de la page
+            const currentPage = window.location.pathname;
+
+            // Parcours tous les liens du menu pour trouver l'élément actif
+            menuItems.forEach(item => {
+                // Si le lien correspond à l'URL actuelle, on ajoute la classe 'active'
+                if (item.getAttribute('href') === currentPage) {
+                    item.classList.add('active');
+                } else {
+                    // Sinon, on s'assure qu'il n'a pas la classe 'active'
+                    item.classList.remove('active');
+                }
+
+                // Ajoute un écouteur d'événement pour changer l'élément actif lors du clic
+                item.addEventListener('click', function() {
+                    // Retire la classe 'active' de tous les liens
+                    menuItems.forEach(link => link.classList.remove('active'));
+                    // Ajoute la classe 'active' uniquement à l'élément cliqué
+                    this.classList.add('active');
+                });
+            });
+        </script>
+
+</body>
+
+</html>
+@else
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,38 +195,10 @@
     <link rel="stylesheet" href="{{ asset('assets/css/tailwindcss-colors.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>DashboardUtilisateur</title>
+    <title>Tableau de bord Utilisateur</title>
 </head>
 
 <body>
-
-    {{-- <div class="container d-flex justify-content-center mt-5">
-        <div class="col-md-6 border shadow">
-
-            <ul class="nav nav-pills nav-justified">
-                <li class="nav-item"><a href="#profile-tab" class="nav-link active" data-toggle="pill">Profil</a></li>
-                <li class="nav-item"><a href="#setting-tab" class="nav-link" data-toggle="pill">Paramètre</a></li>
-                <li class="nav-item"> <a href="{{ route('logout') }}" class="nav-link">Déconnexion</a></li>
-
-            </ul>
-            <div class="tab-content">
-                <div class="tab-pane fade p-5" id="setting-tab">
-
-                    <h4 class="text-center mb-4">Paramètres du compte</h4>
-                    <h6>Nom complet : </h6>
-                    <p>{{ Auth::user()->name }} <a href="#" class="float-right">Edit/Change</a></p>
-                    <h6>Email : </h6>
-                    <p>{{ Auth::user()->email }}<a href="#" class="float-right">Edit/Change</a></p>
-                    <h6>Téléphone : </h6>
-                    <p>785454093 <a href="#" class="float-right">Edit/Change</a></p>
-                    <h6>Genre : </h6>
-                    <p>{{ Auth::user()->gender }} <a href="#" class="float-right">Edit/Change</a></p>
-
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
     <section class="chat-section">
         <div class="chat-container">
             <aside class="chat-sidebar">
@@ -49,7 +206,6 @@
                     <i class="fas fa-dolly"></i>
                 </a>
                 <ul class="chat-sidebar-menu">
-
                     <li class="chat-sidebar-profile">
                         <button type="button" class="chat-sidebar-profile-toggle">
                             <img src="{{ asset('assets/images/R (2).png') }}" alt>
@@ -62,11 +218,10 @@
                     </li>
                 </ul>
             </aside>
-
             <div class="chat-content">
-                <div class="content-sidebar"><br/><br/><br/>
+                <div class="content-sidebar"><br /><br /><br />
                     <div class="content-sidebar-title">Bienvenue</div>
-                    <br/><br/><br/><br/>
+                    <br /><br /><br /><br />
                     <div class="background"></div>
                     <div class="wrapper">
                         <div class="cube">
@@ -75,7 +230,7 @@
                             <div class="side left"></div>
                             <div class="side right"></div>
                             <div class="side front"></div>
-                        </div><br/><br/><br/><br/>
+                        </div><br /><br /><br /><br />
                         <p class="text"> {{ Auth::user()->name }}</p>
                     </div>
 
@@ -102,6 +257,7 @@
                         <label for="address">Adresse</label>
                         <input type="text" id="address" name="address" placeholder="Saisir votre adresse ici..">
                     </form> --}}
+
                 </div>
                 <div class="conversation active ">
                     <div class="conversation-main">
@@ -140,7 +296,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                        </div>   <br /><br />
+                        </div> <br /><br />
                         <div class="container mt-5">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped">
@@ -170,7 +326,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                        </div>   <br /><br />
+                        </div> <br /><br />
                         <div class="container mt-5">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped">
@@ -200,7 +356,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                        </div>   <br /><br />
+                        </div> <br /><br />
                         <div class="container mt-5">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped">
@@ -232,6 +388,9 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <script>
@@ -252,3 +411,4 @@
 </body>
 
 </html>
+@endif

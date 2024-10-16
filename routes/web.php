@@ -1,20 +1,18 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\SubscriptionController;
 use App\Models\Subscription;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\checkRole;
 use Illuminate\Support\Facades\Route;
-
-
-
 
 // Page d'accueil
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
-
 
 
 // Les autres routes restent inchangées
@@ -34,9 +32,16 @@ Route::get('/us', [MainController::class, 'us'])->name('us');
 Route::get('/mission', [MainController::class, 'mission'])->name('mission');
 
 
-Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', [MainController::class, 'dashboard'])->name('dashboard');
-});
+Route::get('/messageDashboard', [AdminController::class, 'messageDashboard'])->name('messageDashboard');
+Route::get('/souscriptionDashboard', [AdminController::class, 'souscriptionDashboard'])->name('souscriptionDashboard');
+
+
+// Route::middleware('auth')->group(function () {
+//     Route::get('/dashboard', [MainController::class, 'dashboard'])->name('dashboard');
+// });
+
+Route::get('/dashboard', [MainController::class, 'dashboard'])->middleware('auth')->name('dashboard');
+
 
 Route::post('/login/processing', [AuthController::class, 'login'])->name('login.process');
 Route::post('/registration/processing', [AuthController::class, 'registration'])->name('registration.process');

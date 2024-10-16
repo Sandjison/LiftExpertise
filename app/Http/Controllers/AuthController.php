@@ -43,7 +43,7 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => $request->password,
-            'gender' => $request->gender, 
+            'gender' => $request->gender,
         ];
 
         try {
@@ -115,4 +115,6 @@ class AuthController extends Controller
             return back()->with('error', 'Une erreur s’est produite pendant le traitement. Veuillez réessayer !');
         }
     }
+
+   
 }

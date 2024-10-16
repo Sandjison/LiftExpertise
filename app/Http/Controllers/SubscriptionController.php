@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Interfaces\SubscriptionInterface;
 use App\Http\Requests\SubscriptionRequest;
+use App\Models\Subscription;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 class SubscriptionController extends Controller
@@ -65,6 +67,14 @@ class SubscriptionController extends Controller
 
         $this->subscriptionInterface->storeSubscription($data);
 
+
         return redirect()->back()->with('success', 'Inscription réussie.');
     }
+
+    // public function subscriptionValue(SubscriptionRequest $request) {
+    
+    
+    // }
+    
 }
+

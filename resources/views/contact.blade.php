@@ -8,30 +8,23 @@
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Contact</title>
-
 
 </head>
 
 <body>
     <header>
-        <!-- menu responsive -->
-
         <div class="menu_toggle">
             <span></span>
         </div>
-
         <div class="logo">
             <a href="#" class="nav_logo">
                 <img src="{{ asset('assets/images/Remove-bg.ai_1723043103315.png') }}" alt="logo">
                 LiftExpertise
             </a>
         </div>
-
         <div class="menu">
-
             <li><a href="{{ route('welcome') }}">Accueil</a></li>
             <li><a href="{{ route('galerie') }}">Galerie</a></li>
             <li class="dropdown">
@@ -44,19 +37,14 @@
                 </div>
             </li>            <li><a href="{{ route('formation') }}">Formation</a></li>
             <li><a href="{{ route('contact') }}">Contact</a></li>
-
         </div>
 
         <button class="login_btn"> <a href="{{ route('login') }}" class="text-white">Se connecter</a> </button>
 
     </header>
-
     <section class="bluz">
-
         <h3>Contact</h3>
-
     </section>
-
     <section>
         <div class="contact_part">
             <div>
@@ -91,15 +79,11 @@
                             <textarea class="form-control" id="message" name="message" rows="8" required></textarea>
                         </div>
                     </div>
-
                     <div class="text-right mt-3">
                         <button type="submit" class="btn btn-primary btn-submit btn-block">Soumettre</button>
                     </div>
-
                 </form>
             </div>
-
-
             <div class="contact_right">
                 <img src="{{ asset('assets/images/3d-casual-life-man-chatting-remotely-with-female-colleague.png') }}"
                     alt="" class="contact_image">
@@ -115,29 +99,23 @@
                                 <i class="fas fa-envelope icon-blue"></i>
                                 <span>ekoueblasandjison@gmail.com</span>
                             </div>
-                           
                         </div>
-
                         <div class="grid_layout">
-                            
                             <div class="phone_section">
                                 <i class="fas fa-phone icon-blue"></i>
-                                <span>Téléphone</span>
+                                <span>+228 98742882</span>
                             </div>
                             <div class="phone_section">
                                 <i class="fas fa-phone icon-blue"></i>
-                                <span>Téléphone</span>
+                                <span>+228 98742882</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
     </section>
     <br/> <br/><br/>
-
     <div class="bg_footer">
         <div class="heading__p">
             <h4>Contactez LiftExpertise plus au plus vite !</h4><br />

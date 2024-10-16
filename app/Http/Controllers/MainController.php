@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Interfaces\ContactInterface;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,8 @@ class MainController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard');
+        $users = User::all();
+        return view('dashboard', ["users" => $users]);
     }
 
     public function registration()
@@ -99,7 +101,7 @@ class MainController extends Controller
 
         return view('formation');
     }
-   
+
     public function contact()
     {
         if (Auth::check())
