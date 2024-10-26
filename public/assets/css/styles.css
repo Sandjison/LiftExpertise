@@ -770,12 +770,9 @@ SECTION
     font-weight: 600;
 }
 
-
-
 button img {
     width: 30px;
 }
-
 
 .close {
     font-size: 30px;
@@ -809,11 +806,7 @@ button img {
         left: 5%;
         z-index: 9999;
         /* Toujours au-dessus des autres éléments */
-
     }
-
-
-
 }
 
 @media (max-width: 1200px) {
@@ -832,11 +825,8 @@ button img {
         left: 5%;
         z-index: 9999;
         /* Toujours au-dessus des autres éléments */
-
     }
 }
-
-
 
 @media (max-width: 995px) {
     #profile {
@@ -854,7 +844,6 @@ button img {
         left: 5%;
         z-index: 9999;
         /* Toujours au-dessus des autres éléments */
-
     }
 }
 
@@ -874,7 +863,6 @@ button img {
         left: 5%;
         z-index: 9999;
         /* Toujours au-dessus des autres éléments */
-
     }
 }
 
@@ -894,7 +882,6 @@ button img {
         left: 5%;
         z-index: 9999;
         /* Toujours au-dessus des autres éléments */
-
     }
 }
 
@@ -914,7 +901,6 @@ button img {
         left: 5%;
         z-index: 9999;
         /* Toujours au-dessus des autres éléments */
-
     }
 }
 

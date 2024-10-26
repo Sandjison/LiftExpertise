@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Interfaces\ContactInterface;
+use App\Models\Contact;
+use App\Models\Subscription;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -18,7 +21,6 @@ class MainController extends Controller
 
     public function logout()
     {
-
         Auth::logout();
         return redirect('/');
     }
@@ -26,7 +28,18 @@ class MainController extends Controller
     public function dashboard()
     {
         $users = User::all();
-        return view('dashboard', ["users" => $users]);
+
+        $startOfMonth = Carbon::now()->startOfMonth();
+        $endOfMonth = Carbon::now()->endOfMonth();
+        $subscriptions = Subscription::whereBetween('created_at', [$startOfMonth, $endOfMonth])->count();
+        $contacts = Contact::whereBetween('created_at', [$startOfMonth, $endOfMonth])->count();
+
+        return view('dashboard', ["users" => $users, "subscriptions" => $subscriptions, "contacts" => $contacts]);
+    }
+    public function dasboardProfile()
+    {
+
+        return view('dasboardProfile');
     }
 
     public function registration()
@@ -107,7 +120,7 @@ class MainController extends Controller
 
         return view('contact');
     }
-   
+
     public function us()
     {
         if (Auth::check())

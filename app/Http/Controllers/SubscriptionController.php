@@ -67,20 +67,16 @@ class SubscriptionController extends Controller
 
         $this->subscriptionInterface->storeSubscription($data);
 
-
         return redirect()->back()->with('success', 'Inscription réussie.');
     }
 
     public function souscriptionDashboard()
     {
-
         $subscriptions = Subscription::all();
 
         return  view('souscriptionDashboard', ["subscriptions" => $subscriptions]);
 
-
         // return view('souscriptionDashboard');
     }
-    
 }
 

@@ -37,11 +37,9 @@ Route::get('/messageDashboard', [ContactController::class, 'messageDashboard'])-
 Route::get('/souscriptionDashboard', [SubscriptionController::class, 'souscriptionDashboard'])->name('souscriptionDashboard');
 
 
-// Route::middleware('auth')->group(function () {
-//     Route::get('/dashboard', [MainController::class, 'dashboard'])->name('dashboard');
-// });
-
 Route::get('/dashboard', [MainController::class, 'dashboard'])->middleware('auth')->name('dashboard');
+
+Route::get('/dasboardProfile', [MainController::class, 'dasboardProfile'])->middleware('auth')->name('dasboardProfile');
 
 
 Route::post('/login/processing', [AuthController::class, 'login'])->name('login.process');

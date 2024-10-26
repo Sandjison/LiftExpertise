@@ -18,13 +18,11 @@
         <div class="side-header">
             <h3>L<span>iftExpertise</span></h3>
         </div>
-
         <div class="side-content">
             <div class="profile">
                 <div class="profile-img bg-img"></div>
                 <h4>David Green</h4>
             </div>
-
             <div class="side-menu">
                 <ul>
                     <li>
@@ -49,9 +47,7 @@
             </div>
         </div>
     </div>
-
     <div class="main-content">
-
         <header>
             <div class="header-content">
                 <label for="menu-toggle">
@@ -67,12 +63,10 @@
                 </div>
             </div>
         </header>
-
         <main>
             <div class="page-header">
                 <h1>Messages</h1>
             </div>
-
             <div class="page-content">
                 <div class="records table-responsive">
                     <div>
@@ -95,7 +89,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-
                                 @foreach ($contacts as $contact)
                                     <tr>
                                         <td> {{ $contact->id }} </td>
@@ -130,10 +123,8 @@
     <script>
         // Sélectionne tous les liens du menu
         const menuItems = document.querySelectorAll('.side-menu a');
-
         // Récupère l'URL actuelle de la page
         const currentPage = window.location.pathname;
-
         // Parcours tous les liens du menu pour trouver l'élément actif
         menuItems.forEach(item => {
             // Si le lien correspond à l'URL actuelle, on ajoute la classe 'active'
@@ -143,7 +134,6 @@
                 // Sinon, on s'assure qu'il n'a pas la classe 'active'
                 item.classList.remove('active');
             }
-
             // Ajoute un écouteur d'événement pour changer l'élément actif lors du clic
             item.addEventListener('click', function() {
                 // Retire la classe 'active' de tous les liens

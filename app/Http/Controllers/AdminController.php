@@ -17,11 +17,9 @@ class AdminController extends Controller
     {
         $this->subscriptionInterface = $subscriptionInterface;
     }
-
-
+    
     public function messageDashboard()
     {
         return view('messageDashboard');
     }
-    
 }

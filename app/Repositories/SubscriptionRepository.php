@@ -8,8 +8,6 @@ use App\Models\Subscription;
 class SubscriptionRepository implements SubscriptionInterface
 
 {
-    
-   
     public function storeSubscription(array $data)
     {
         return Subscription::create($data);

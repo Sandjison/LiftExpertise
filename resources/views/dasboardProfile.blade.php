@@ -1,217 +1,4 @@
 <!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-    <title>Tableau de bord Admin</title>
-    <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet"
-        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-
-</head>
-
-<body>
-
-    @if (Auth::check() && Auth::user()->email == 'adminlift@gmail.com')
-        <input type="checkbox" id="menu-toggle">
-        <div class="sidebar">
-            <div class="side-header">
-                <h3>L<span>iftExpertise</span></h3>
-            </div>
-            <div class="side-content">
-                <div class="profile">
-                    <div class="profile-img bg-img">
-                    </div>
-                    <h4>David Green</h4>
-                </div>
-                <div class="side-menu">
-                    <ul>
-                        <li>
-                            <a href="{{ route('dashboard') }}" class="active">
-                                <span class="las la-home"></span>
-                                <small>Tableau de bord</small>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('messageDashboard') }}" class="active">
-                                <span class="las la-envelope"></span>
-                                <small>Messagerie</small>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('souscriptionDashboard') }}" class="active">
-                                <span class="las la-shopping-cart"></span>
-                                <small>Souscription</small>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="main-content">
-            <header>
-                <div class="header-content">
-                    <label for="menu-toggle">
-                        <span class="las la-bars"></span>
-                    </label>
-                    <div class="header-menu">
-                        <div class="user">
-                            <div class=""></div>
-                            <span class="fas fa-sign-out-alt"></span>
-                            <span>
-                                <a href="{{ route('logout') }} " class="logout">
-                                    <i class="ri-logout-box-line"></i>
-                                    Déconnexion
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <main>
-                <div class="page-header">
-                    <h1>Tableau de bord</h1>
-                </div>
-                <div class="page-content">
-                    <div class="analytics">
-                        <div class="card">
-                            <div class="card-head">
-                                <h2> {{ $subscriptions }} </h2>
-                            </div>
-                            <div class="card-progress">
-                                <small>Nombre de souscriptions ce mois-ci</small>
-                                {{-- <div class="card-indicator">
-                                    <div class="indicator one" style="width: 60%"></div>
-                                </div> --}}
-                                <div class="card-indicator">
-                                    {{-- Calcul du pourcentage et ajustement de la barre de progression --}}
-                                    @php
-                                        $subscriptionPercentage = ($subscriptions / 1000) * 100; // Limite fixée à 1000
-                                        if ($subscriptionPercentage > 100) {
-                                            $subscriptionPercentage = 100; // S'assurer que le pourcentage ne dépasse pas 100
-                                        }
-                                    @endphp
-                                    <div class="indicator one" style="width: {{ $subscriptionPercentage }}%"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-head">
-                                <h2> {{ $contacts }} </h2>
-                            </div>
-                            <div class="card-progress">
-                                <small>Nombre de messages reçus ce mois-ci </small>
-                                <div class="card-indicator">
-                                    @php
-                                        $messagePercentage = ($contacts / 100) * 100;
-                                        if ($messagePercentage > 100) {
-                                            $messagePercentage = 100;
-                                        }
-                                    @endphp
-                                    <div class="indicator four" style="width: {{ $messagePercentage }}%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="records table-responsive">
-                        <div>
-                            <table width="100%" id="datatable" class="stripe">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>
-                                            Nom complet</th>
-                                        <th>
-                                            Email</th>
-                                        <th>
-                                            Sexe</th>
-                                        <th>
-                                            Date</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($users as $user)
-                                        <tr>
-                                            <td> {{ $user->id }} </td>
-                                            <td>
-                                                {{ $user->name }}
-                                            </td>
-                                            <td>
-                                                {{ $user->email }}
-                                            </td>
-                                            <td>
-                                                {{ $user->gender }}
-                                            </td>
-                                            <td>
-                                                {{ $user->created_at }}
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </div>
-
-        <script>
-            // Sélectionne tous les liens du menu
-            const menuItems = document.querySelectorAll('.side-menu a');
-            // Récupère l'URL actuelle de la page
-            const currentPage = window.location.pathname;
-            // Parcours tous les liens du menu pour trouver l'élément actif
-            menuItems.forEach(item => {
-                // Si le lien correspond à l'URL actuelle, on ajoute la classe 'active'
-                if (item.getAttribute('href') === currentPage) {
-                    item.classList.add('active');
-                } else {
-                    // Sinon, on s'assure qu'il n'a pas la classe 'active'
-                    item.classList.remove('active');
-                }
-                // Ajoute un écouteur d'événement pour changer l'élément actif lors du clic
-                item.addEventListener('click', function() {
-                    // Retire la classe 'active' de tous les liens
-                    menuItems.forEach(link => link.classList.remove('active'));
-                    // Ajoute la classe 'active' uniquement à l'élément cliqué
-                    this.classList.add('active');
-                });
-            });
-        </script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                $('#datatable').DataTable({
-                    "paging": false,
-                    "ordering": true,
-                    "info": false,
-                    "searching": true,
-                    "language": {
-                        "search": "",
-                        "searchPlaceholder": "Recherche",
-                        "lengthMenu": "_MENU_",
-                        "zeroRecords": "Aucun enregistrement trouvé",
-                        "info": "Affichage de _START_ à _END_ sur _TOTAL_ entrées",
-                        "infoEmpty": "Aucun enregistrement disponible",
-                        "infoFiltered": "(filtré de _MAX_ entrées au total)",
-                        "paginate": {
-                            "previous": "Précédent",
-                            "next": "Suivant"
-                        }
-                    }
-                });
-            });
-        </script>
-
-</body>
-
-</html>
-@else
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -239,8 +26,8 @@
                             <img src="{{ asset('assets/images/R (2).png') }}" alt>
                         </button>
                         <ul class="chat-sidebar-profile-dropdown">
-                            <li><a href="{{ route('dasboardProfile') }}"><i class="ri-user-line"></i>
-                                    Profil</a></li>
+                            <li><a href="{{ route('dasboardProfile') }}" data-conversation="#conversation-1"><i
+                                        class="ri-user-line"></i> Profil</a></li>
                             <li><a href="{{ route('logout') }}"><i class="ri-logout-box-line"></i>Déconnexion</a>
                             </li>
                         </ul>
@@ -248,20 +35,46 @@
                 </ul>
             </aside>
             <div class="chat-content">
-                <div class="content-sidebar"><br /><br /><br />
-                    <div class="content-sidebar-title">Bienvenue</div>
-                    <br /><br /><br /><br />
-                    <div class="background"></div>
-                    <div class="wrapper">
-                        <div class="cube">
-                            <div class="bottom"></div>
-                            <div class="side back"></div>
-                            <div class="side left"></div>
-                            <div class="side right"></div>
-                            <div class="side front"></div>
-                        </div><br /><br /><br /><br />
-                        <p class="text"> {{ Auth::user()->name }}</p>
+                <div class="content-sidebar">
+
+                    <div class="content-sidebar-title">Profil</div> <br /><br />
+                    <div class="profile-pic-container">
+                        <!-- Bouton avec l'image de profil -->
+                        <button type="button" id="profile-pic-button">
+                            <img src="{{ asset('assets/images/R (2).png') }}" alt="Photo de Profil" class="profile-pic">
+                        </button>
+
+                        <!-- Input type file caché -->
+                        <input type="file" id="file-input" style="display: none;" accept="image/*">
                     </div>
+
+                    <form class="profile-info">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" name="name"
+                            placeholder="Saisir votre nom complet ici...">
+
+                        <label for="phone">Numéro de téléphone</label>
+                        <input type="tel" id="phone" name="phone"
+                            placeholder="Saisir votre numéro de téléphone ici...">
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Saisir votre e-mail ici...">
+
+                        <label for="address">Adresse</label>
+                        <input type="text" id="address" name="address" placeholder="Saisir votre adresse ici..">
+
+                        <div class="update_buttons_div">
+                            <button type="button" id="modify_button" class="update_button">Soumettre</button>
+
+                            <button type="button" id="cancel_button" class="red_button" style="display: none;">
+                                Annuler
+                            </button>
+                            <button type="submit" id="apply_button" class="submit_button" style="display: none;">
+                                Appliquer
+                            </button>
+                        </div>
+
+                    </form>
                 </div>
                 <div class="conversation active ">
                     <div class="conversation-main">
@@ -410,6 +223,7 @@
             }
         })
         // end: Sidebar
+
         document.addEventListener("DOMContentLoaded", function() {
             let ifChange = false;
             const modifyButton = document.getElementById('modify_button');
@@ -439,9 +253,53 @@
                 resetForm();
             });
         });
+        ///////////////
+        document.addEventListener("DOMContentLoaded", function() {
+            const profilePicButton = document.getElementById('profile-pic-button');
+            const fileInput = document.getElementById('file-input');
+
+            // Lorsque le bouton est cliqué, déclenche l'ouverture du champ de fichier
+            profilePicButton.addEventListener('click', function() {
+                fileInput.click(); // Ouvre le sélecteur de fichier
+            });
+
+            // Vous pouvez ajouter une fonction pour afficher l'image choisie comme aperçu
+            fileInput.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        // Met à jour l'image de profil avec l'aperçu de l'image sélectionnée
+                        profilePicButton.querySelector('img').src = e.target.result;
+                    }
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+
+        /////////////
+        document.querySelectorAll('[data-conversation]').forEach(function(item) {
+            item.addEventListener('click', function(e) {
+                e.preventDefault()
+                document.querySelectorAll('.conversation').forEach(function(i) {
+                    i.classList.remove('active')
+                })
+                document.querySelector(this.dataset.conversation).classList.add('active')
+            })
+        })
+
+
+        document.querySelectorAll('.conversation-back').forEach(function(item) {
+            item.addEventListener('click', function(e) {
+                e.preventDefault()
+                this.closest('.conversation').classList.remove('active')
+                document.querySelector('.conversation-default').classList.add('active')
+            })
+        })
+
+        ///////////
     </script>
 
 </body>
 
 </html>
-@endif
