@@ -44,15 +44,21 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => $request->password,
             'gender' => $request->gender, 
+
+
+            'phone' =>  $request->phone, 
+            'address' => $request->address, 
+            'profile_picture' => $request->profile_picture, 
         ];
         
 
         try {
+
             $user = $this->authInterface->registration($data);
             Auth::login($user);
             return redirect()->route('dashboard');
         } catch (\Exception $ex) {
-            return $ex;
+            // return $ex;
             return back()->with('error', 'Une erreur s’est produite pendant le traitement. Veuillez réessayer !');
         }
     }

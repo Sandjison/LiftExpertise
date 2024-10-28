@@ -84,7 +84,7 @@
                                 Connaissance du Matériel Automobile
                             </td>
                             <td>3 Séances de conduite par semaine (une journée)</td>
-                            <td>110.000 F Cfa</td>
+                            <td>100.000 F Cfa</td>
                         </tr>
                     </tbody>
                 </table>
@@ -120,14 +120,14 @@
                                 Secourisme <br /> <br />
                                 Connaissance du Matériel Automobile
                             </td>
-                            <td>4 Séances de conduite par semaine (une journée)</td>
-                            <td>130.000 F Cfa</td>
+                            <td>5 Séances de conduite par semaine (une journée)</td>
+                            <td>120.000 F Cfa</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <img src="{{ asset('assets/images/icons8-pdf-40.png') }}" alt="pdf" style="width: 1.8%">
-            <a href="{{ URL::asset('assets/pdf/A4 - 1.pdf') }}">La fiche de formation accéléree en pdf
+            <a href="{{ URL::asset('assets/pdf/A4 - 2.pdf') }}">La fiche de formation accéléree en pdf
             </a>
         </div>
         <div class="heading__p ">
@@ -165,7 +165,7 @@
             </div>
 
             <img src="{{ asset('assets/images/icons8-pdf-40.png') }}" alt="pdf" style="width: 1.8%">
-            <a href="{{ URL::asset('assets/pdf/A4 - 1.pdf') }}">La fiche de formation premium en pdf </a>
+            <a href="{{ URL::asset('assets/pdf/A4 - 3.pdf') }}">La fiche de formation premium en pdf </a>
 
         </div>
     </section>

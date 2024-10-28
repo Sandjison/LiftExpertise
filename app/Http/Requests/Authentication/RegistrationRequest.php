@@ -31,6 +31,12 @@ class RegistrationRequest extends FormRequest
             'password' => 'required|min:6|max:64',
             'passwordConfirm' => 'same:password',
             'gender' => 'required|in:male,female',
+
+
+            'phone' => 'nullable|string|max:15',
+            'address' => 'nullable|string|max:255',
+            'profile_picture' => 'nullable|image|max:10048'
+            // 'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg|max:10048',
         ];
     }
 
@@ -55,7 +61,12 @@ class RegistrationRequest extends FormRequest
             'password.min' => 'Le mot de passe doit contenir au minimum 6 caractères.',
             'password.max' => 'Le mot de passe doit contenir au maximum 64 caractères.',
             'passwordConfirm.same' => 'Les deux mots de passe ne sont pas identiques.',
+
+
+            'phone.max' => 'Le numéro de téléphone ne doit pas dépasser 15 caractères.',
+            'address.max' => 'L\'adresse ne doit pas dépasser 255 caractères.',
+            'profile_picture.image' => 'Le fichier téléchargé doit être une image.',
+            'profile_picture.max' => 'L\'image ne doit pas dépasser 10 Mo.',
         ];
     }
 }
-

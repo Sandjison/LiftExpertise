@@ -65,6 +65,21 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        {{-- <label for="phone">Numéro de téléphone</label> --}}
+                        <input type="hidden" name="phone" id="phone" class="form-control" placeholder="Saisir votre numéro de téléphone ici ...">
+                    </div>
+                
+                    <div class="form-group">
+                        {{-- <label for="address">Adresse</label> --}}
+                        <input type="hidden" name="address" id="address" class="form-control" placeholder="Saisir votre adresse ici ...">
+                    </div>
+                
+                    <div class="form-group">
+                        {{-- <label for="profile_picture">Photo de Profil</label> --}}
+                        <input type="hidden" name="profile_picture" id="profile_picture" class="form-control">
+                    </div>
+
                     <button type="submit" class="btn btn-primary btn-block">S’inscrire</button> <br/>
 
                     <div class="form-group text-center">

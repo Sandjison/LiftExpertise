@@ -7,6 +7,7 @@
     <title>Welcome</title>
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/aaa.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="https://kit.fontawesome.com/3010b1eaf1.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -16,6 +17,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
 
 </head>
@@ -61,7 +63,8 @@
 
     <!-- section Acceuil -->
 
-    <section id="home" class="section home">
+    {{-- <section id="home" class="section home">
+
         <div class="left  home__data home__container container grid">
             <h2>CONDUITE DE</h2>
 
@@ -79,7 +82,58 @@
         </div>
 
         <div class="home__triangle home__triangle-1 home__img"></div>
+
+    </section> --}}
+
+    <section id="home" class="section home">
+        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="d-flex align-items-center">
+                        <div class="left">
+                            <h2>CONDUITE DE</h2>
+                            <h1><span>CHARIOT ÉLÉVATEUR</span></h1>
+                            <p>Cette formation pratique vous offre l’opportunité de développer une expertise dans le marché du travail et d’améliorer vos perspectives d’emploi grâce à l’obtention d’un certificat.</p>
+                            <a href="{{ route('registration') }}" class="login_btn">S'inscrire</a>
+                        </div>
+                        <div class="right">
+                            <img src="{{ asset('assets/images/Remove-bg.ai_1723043103315.png') }}" alt="Image 1">
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="d-flex align-items-center">
+                        <div class="left ">
+                            <h2>FORMATION SPÉCIALE</h2>
+                            <h1><span>OPÉRATEUR PROFESSIONNEL</span></h1>
+                            <p>Perfectionnez vos compétences avec des formations certifiées pour répondre aux besoins spécifiques du secteur industriel.</p>
+                            <a href="{{ route('registration') }}" class="login_btn">S'inscrire</a>
+                        </div>
+                        <div class="right">
+                            <img src="{{ asset('assets/images/Remove-bg.ai_1723043103315.png') }}" alt="Image 2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Boutons de Navigation -->
+            <button class="carousel-control-prev custom-carousel-control" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next custom-carousel-control" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="home__triangle home__triangle-1 home__img"></div>
     </section>
+    
+    
+    
 
     <section class="features" id="features">
         <div class="heading__p ">

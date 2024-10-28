@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\UserController;
 use App\Models\Subscription;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\checkRole;
@@ -49,3 +50,8 @@ Route::post('/otpCode/processing', [AuthController::class, 'checkOtpCode'])->nam
 Route::post('/newPassword/processing', [AuthController::class, 'newPassword'])->name('newPassword.process');
 Route::post('/contact/send-mail/processing', [ContactController::class, 'contactSendEmail'])->name('sendMail');
 Route::post('/subscription/processing', [SubscriptionController::class, 'subscription'])->name('subscription.process');
+
+
+// Route::get('/dasboardProfile', [UserController::class, 'update_profil'])->middleware('auth')->name('dasboardProfile');
+
+Route::post('/dasboardProfile', [UserController::class, 'update_profil'])->middleware('auth')->name('dasboardProfile');

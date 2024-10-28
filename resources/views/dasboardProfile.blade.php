@@ -38,33 +38,41 @@
                 <div class="content-sidebar">
 
                     <div class="content-sidebar-title">Profil</div> <br /><br />
-                    <div class="profile-pic-container">
-                        <!-- Bouton avec l'image de profil -->
-                        <button type="button" id="profile-pic-button">
-                            <img src="{{ asset('assets/images/R (2).png') }}" alt="Photo de Profil" class="profile-pic">
-                        </button>
 
-                        <!-- Input type file caché -->
-                        <input type="file" id="file-input" style="display: none;" accept="image/*">
-                    </div>
+                    <form class="profile-info" action="{{ route('dasboardProfile') }}" method="POST"
+                        enctype="multipart/form-data">
+                        @csrf
 
-                    <form class="profile-info">
+                        <div class="profile-pic-container">
+                            <!-- Bouton avec l'image de profil -->
+                            <button type="button" id="profile-pic-button"
+                                onclick="document.getElementById('profile_picture').click();">
+                                <img src="{{ Auth::user()->profile_picture ? asset('uploads/' . Auth::user()->profile_picture) : asset('assets/images/R (2).png') }}"
+                                    alt="Photo de Profil" id="profile-pic-preview" class="profile-pic">
+                            </button>
+                            <!-- Input type file caché -->
+                            <input type="file" name="profile_picture" id="profile_picture" style="display: none;"
+                                accept="image/*" onchange="previewImage(event)">
+                        </div>
+
                         <label for="name">Nom complet</label>
                         <input type="text" id="name" name="name"
-                            placeholder="Saisir votre nom complet ici...">
+                            placeholder="Saisir votre nom complet ici..." value=" {{ Auth::user()->name }}" readonly>
 
                         <label for="phone">Numéro de téléphone</label>
                         <input type="tel" id="phone" name="phone"
-                            placeholder="Saisir votre numéro de téléphone ici...">
+                            placeholder="Saisir votre numéro de téléphone ici..." value="{{ Auth::user()->phone }}">
 
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Saisir votre e-mail ici...">
+                        <input type="email" id="email" name="email" placeholder="Saisir votre e-mail ici..."
+                            value=" {{ Auth::user()->email }}" readonly>
 
                         <label for="address">Adresse</label>
-                        <input type="text" id="address" name="address" placeholder="Saisir votre adresse ici..">
+                        <input type="text" id="address" name="address" placeholder="Saisir votre adresse ici.."
+                            value="{{ Auth::user()->address }}">
 
                         <div class="update_buttons_div">
-                            <button type="button" id="modify_button" class="update_button">Soumettre</button>
+                            <button type="button" id="modify_button" class="update_button">Modifier</button>
 
                             <button type="button" id="cancel_button" class="red_button" style="display: none;">
                                 Annuler
@@ -233,7 +241,7 @@
             function resetForm() {
                 applyButton.style.display = 'none';
                 modifyButton.style.display = 'inline-block';
-                modifyButton.innerText = 'Soumettre';
+                modifyButton.innerText = 'Modifier';
                 cancelButton.style.display = 'none';
                 ifChange = false;
             }
@@ -248,32 +256,8 @@
                     resetForm();
                 }
             });
-
             cancelButton.addEventListener('click', function() {
                 resetForm();
-            });
-        });
-        ///////////////
-        document.addEventListener("DOMContentLoaded", function() {
-            const profilePicButton = document.getElementById('profile-pic-button');
-            const fileInput = document.getElementById('file-input');
-
-            // Lorsque le bouton est cliqué, déclenche l'ouverture du champ de fichier
-            profilePicButton.addEventListener('click', function() {
-                fileInput.click(); // Ouvre le sélecteur de fichier
-            });
-
-            // Vous pouvez ajouter une fonction pour afficher l'image choisie comme aperçu
-            fileInput.addEventListener('change', function(event) {
-                const file = event.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        // Met à jour l'image de profil avec l'aperçu de l'image sélectionnée
-                        profilePicButton.querySelector('img').src = e.target.result;
-                    }
-                    reader.readAsDataURL(file);
-                }
             });
         });
 
@@ -288,7 +272,6 @@
             })
         })
 
-
         document.querySelectorAll('.conversation-back').forEach(function(item) {
             item.addEventListener('click', function(e) {
                 e.preventDefault()
@@ -296,7 +279,6 @@
                 document.querySelector('.conversation-default').classList.add('active')
             })
         })
-
         ///////////
     </script>
 

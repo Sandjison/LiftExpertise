@@ -311,6 +311,8 @@ body {
 .profile-pic-container {
     margin-bottom: 20px;
     border: none;
+    display: flex;
+    flex-direction: column;
     outline: transparent;
 }
 
