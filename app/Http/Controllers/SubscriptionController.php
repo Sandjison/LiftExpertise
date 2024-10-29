@@ -16,7 +16,6 @@ class SubscriptionController extends Controller
     public function __construct(SubscriptionInterface $subscriptionInterface)
     {
         $this->subscriptionInterface = $subscriptionInterface;
-
     }
 
     public function souscription($id)
@@ -25,18 +24,18 @@ class SubscriptionController extends Controller
             [
                 "id" => 1,
                 "formula" => "Normale",
-                "price" => "110 000",
+                "price" => "100 000",
                 "sceance" => "3 par semaine",
                 "register" => "10 000",
-                "total" => "120 000"
+                "total" => "110 000"
             ],
             [
                 "id" => 2,
                 "formula" => "Accélérée",
-                "price" => "130 000",
+                "price" => "120 000",
                 "sceance" => "3 par semaine",
                 "register" => "10 000",
-                "total" => "140 000"
+                "total" => "130 000"
             ],
             [
                 "id" => 3,
@@ -65,9 +64,14 @@ class SubscriptionController extends Controller
         $data['plan'] = $request->plan;
         $data['total'] = $request->total;
 
-        $this->subscriptionInterface->storeSubscription($data);
+        // $this->subscriptionInterface->storeSubscription($data);
+        $suscriptionId = $this->subscriptionInterface->storeSubscription($data)->id;
+        $newTotal = str_replace(" ", "", $request->total);
+        $operator = strtoupper($request->payment);
 
-        return redirect()->back()->with('success', 'Inscription réussie.');
+        return redirect("https://paygateglobal.com/v1/page?token=d4cfd991-0fb8-4ebb-aea2-0db502686678&amount=$newTotal&description=test&identifier=$suscriptionId&phone_number=$request->payment_number&network=$operator");
+
+        // return redirect()->back()->with('success', 'Inscription réussie.');
     }
 
     public function souscriptionDashboard()
@@ -79,4 +83,3 @@ class SubscriptionController extends Controller
         // return view('souscriptionDashboard');
     }
 }
-

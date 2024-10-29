@@ -63,8 +63,7 @@
 
     <!-- section Acceuil -->
 
-    {{-- <section id="home" class="section home">
-
+    <section id="home" class="section home">
         <div class="left  home__data home__container container grid">
             <h2>CONDUITE DE</h2>
 
@@ -83,58 +82,8 @@
 
         <div class="home__triangle home__triangle-1 home__img"></div>
 
-    </section> --}}
-
-    <section id="home" class="section home">
-        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <!-- Slide 1 -->
-                <div class="carousel-item active">
-                    <div class="d-flex align-items-center">
-                        <div class="left">
-                            <h2>CONDUITE DE</h2>
-                            <h1><span>CHARIOT ÉLÉVATEUR</span></h1>
-                            <p>Cette formation pratique vous offre l’opportunité de développer une expertise dans le marché du travail et d’améliorer vos perspectives d’emploi grâce à l’obtention d’un certificat.</p>
-                            <a href="{{ route('registration') }}" class="login_btn">S'inscrire</a>
-                        </div>
-                        <div class="right">
-                            <img src="{{ asset('assets/images/Remove-bg.ai_1723043103315.png') }}" alt="Image 1">
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Slide 2 -->
-                <div class="carousel-item">
-                    <div class="d-flex align-items-center">
-                        <div class="left ">
-                            <h2>FORMATION SPÉCIALE</h2>
-                            <h1><span>OPÉRATEUR PROFESSIONNEL</span></h1>
-                            <p>Perfectionnez vos compétences avec des formations certifiées pour répondre aux besoins spécifiques du secteur industriel.</p>
-                            <a href="{{ route('registration') }}" class="login_btn">S'inscrire</a>
-                        </div>
-                        <div class="right">
-                            <img src="{{ asset('assets/images/Remove-bg.ai_1723043103315.png') }}" alt="Image 2">
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Boutons de Navigation -->
-            <button class="carousel-control-prev custom-carousel-control" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next custom-carousel-control" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-        <div class="home__triangle home__triangle-1 home__img"></div>
     </section>
     
-    
-    
-
     <section class="features" id="features">
         <div class="heading__p ">
             <h1 class="heading"><span>
@@ -919,6 +868,118 @@
 
     <!-- JavaScript de Bootstrap -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // (function($) {
+        //     "use strict";
+
+        //     // Spinner
+        //     var spinner = function() {
+        //         setTimeout(function() {
+        //             if ($('#spinner').length > 0) {
+        //                 $('#spinner').removeClass('show');
+        //             }
+        //         }, 1);
+        //     };
+        //     spinner();
+
+
+        //     // Initiate the wowjs
+        //     new WOW().init();
+
+
+        //     // Sticky Navbar
+        //     $(window).scroll(function() {
+        //         if ($(this).scrollTop() > 300) {
+        //             $('.sticky-top').css('top', '0px');
+        //         } else {
+        //             $('.sticky-top').css('top', '-100px');
+        //         }
+        //     });
+
+
+        //     // Dropdown on mouse hover
+        //     const $dropdown = $(".dropdown");
+        //     const $dropdownToggle = $(".dropdown-toggle");
+        //     const $dropdownMenu = $(".dropdown-menu");
+        //     const showClass = "show";
+
+        //     $(window).on("load resize", function() {
+        //         if (this.matchMedia("(min-width: 992px)").matches) {
+        //             $dropdown.hover(
+        //                 function() {
+        //                     const $this = $(this);
+        //                     $this.addClass(showClass);
+        //                     $this.find($dropdownToggle).attr("aria-expanded", "true");
+        //                     $this.find($dropdownMenu).addClass(showClass);
+        //                 },
+        //                 function() {
+        //                     const $this = $(this);
+        //                     $this.removeClass(showClass);
+        //                     $this.find($dropdownToggle).attr("aria-expanded", "false");
+        //                     $this.find($dropdownMenu).removeClass(showClass);
+        //                 }
+        //             );
+        //         } else {
+        //             $dropdown.off("mouseenter mouseleave");
+        //         }
+        //     });
+
+
+        //     // Back to top button
+        //     $(window).scroll(function() {
+        //         if ($(this).scrollTop() > 300) {
+        //             $('.back-to-top').fadeIn('slow');
+        //         } else {
+        //             $('.back-to-top').fadeOut('slow');
+        //         }
+        //     });
+        //     $('.back-to-top').click(function() {
+        //         $('html, body').animate({
+        //             scrollTop: 0
+        //         }, 1500, 'easeInOutExpo');
+        //         return false;
+        //     });
+
+
+        //     // Header carousel
+        //     $(".header-carousel").owlCarousel({
+        //         autoplay: true,
+        //         smartSpeed: 1500,
+        //         items: 1,
+        //         dots: false,
+        //         loop: true,
+        //         nav: true,
+        //         navText: [
+        //             '<i class="bi bi-chevron-left"></i>',
+        //             '<i class="bi bi-chevron-right"></i>'
+        //         ]
+        //     });
+
+        //     // Testimonials carousel
+        //     $(".testimonial-carousel").owlCarousel({
+        //         autoplay: true,
+        //         smartSpeed: 1000,
+        //         center: true,
+        //         margin: 24,
+        //         dots: true,
+        //         loop: true,
+        //         nav: false,
+        //         responsive: {
+        //             0: {
+        //                 items: 1
+        //             },
+        //             768: {
+        //                 items: 2
+        //             },
+        //             992: {
+        //                 items: 3
+        //             }
+        //         }
+        //     });
+
+        // })(jQuery);
+    </script>
 
 </body>
 

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('email')->nullable();
             $table->enum('gender', ['male', 'female']);
-            $table->string('payment_number');
+            $table->string('payment_number')->nullable();
             $table->string('plan');
             $table->string('contact');
             $table->decimal('total'); 

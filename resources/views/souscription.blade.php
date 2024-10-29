@@ -35,8 +35,7 @@
             <h1 class="text-center mb-4 custom-title">Souscription</h1>
         </div>
 
-        <h4 class="text-center mb-5 custom_text">Inscription à la formation</h4>
-
+        <h4 class="text-center mb-5 custom_text">Souscription à la formation</h4>
 
         <div class="row">
             <div class="col-md-4 order-md-2 mt-4 ">
@@ -77,7 +76,7 @@
 
             <div class="col-md-8 order-md-1">
                 <form class="needs-validation" action="{{ route('subscription.process') }}" method="POST">
-                    
+
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul class="mb-0">
@@ -125,20 +124,6 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="payment">Numéro de paiement</label>
-                            <input type="text" class="form-control" id="payment"
-                                placeholder="Saisissez votre numéro de paiement ici..." name="payment_number" required>
-
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="contact">Contact</label>
-                            <input type="text" class="form-control" id="contact"
-                                placeholder="Numéro de téléphone..." name="contact" required>
-                        </div>
-                    </div>
-
-                    <div class="row">
 
                         <div class="form-group col-md-6 mb-3">
                             <label for="payment-method">Mode de paiement</label><br>
@@ -153,15 +138,28 @@
                                 <label for="tmoney" class="form-check-label">T-money</label>
                             </div>
                         </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="contact">Contact</label>
+                            <input type="text" class="form-control" id="contact"
+                                placeholder="Numéro de téléphone..." name="contact" required>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+                            {{-- <label for="payment">Numéro de paiement</label> --}}
+                            <input type="hidden" class="form-control" id="payment"
+                                placeholder="Saisissez votre numéro de paiement ici..." name="payment_number">
+                        </div>
+
                         <div>
                             <input type="hidden" name="plan" value="{{ $plan['formula'] }}">
                             <input type="hidden" name="total" value="{{ $plan['total'] }}">
                         </div>
-
-
                     </div>
 
-                    <div class="text-right mt-3">
+                    <div class="text-right mt-5">
                         <button type="submit" class="btn btn-primary btn-submit btn-block">Soumettre</button>
                     </div>
                 </form>

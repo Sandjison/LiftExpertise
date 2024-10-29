@@ -25,7 +25,7 @@ class SubscriptionRequest extends FormRequest
             'last_name' => 'required|string|max:255',
             'email' => 'nullable|email|max:255',
             'gender' => 'required|in:male,female',
-            'payment_number' => 'required|string|max:20',
+            'payment_number' => 'nullable|string|max:20',
             'contact' => 'required|string|max:20',
         ];
     }
@@ -41,7 +41,7 @@ class SubscriptionRequest extends FormRequest
             'email.email' => 'L\'email doit être valide.',
             'gender.required' => 'Le sexe est obligatoire.',
             'gender.in' => 'Le sexe doit être "male" ou "female".',
-            'payment_number.required' => 'Le numéro de paiement est obligatoire.',
+            'payment_number' => 'Le numéro de paiement est obligatoire.',
             'contact.required' => 'Le contact est obligatoire.',
            
         ];
