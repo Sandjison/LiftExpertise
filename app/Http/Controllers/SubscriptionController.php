@@ -23,27 +23,51 @@ class SubscriptionController extends Controller
         $plans = [
             [
                 "id" => 1,
-                "formula" => "Normale",
+                "formula" => "Normale ( CHARIOT )",
                 "price" => "100 000",
                 "sceance" => "3 par semaine",
                 "register" => "10 000",
-                "total" => "110 000"
+                "total" => "50 000"
             ],
             [
                 "id" => 2,
-                "formula" => "Accélérée",
+                "formula" => "Accélérée ( CHARIOT )",
                 "price" => "120 000",
-                "sceance" => "3 par semaine",
+                "sceance" => "5 par semaine",
                 "register" => "10 000",
-                "total" => "130 000"
+                "total" => "60 000"
             ],
             [
                 "id" => 3,
-                "formula" => "Premium ou VIP",
+                "formula" => "Premium ( CHARIOT )",
                 "price" => "150 000",
                 "sceance" => "Variable",
                 "register" => "10 000",
-                "total" => "160 000"
+                "total" => "75 000"
+            ],
+            [
+                "id" => 4,
+                "formula" => "Normale ( CHARGEUSE )",
+                "price" => "350 000",
+                "sceance" => "3 par semaine",
+                "register" => "20 000",
+                "total" => "125 000"
+            ],
+            [
+                "id" => 5,
+                "formula" => "Normale ( GRUE PPM )",
+                "price" => "450 000",
+                "sceance" => "3 par semaine",
+                "register" => "20 000",
+                "total" => "225 000"
+            ],
+            [
+                "id" => 6,
+                "formula" => "Normale ( HYDRAULIQUE )",
+                "price" => "350 000",
+                "sceance" => "3 par semaine",
+                "register" => "20 000",
+                "total" => "125 000"
             ]
         ];
 

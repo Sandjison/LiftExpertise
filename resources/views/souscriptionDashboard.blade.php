@@ -84,8 +84,8 @@
                                         Formule</th>
                                     <th>
                                         Contact</th>
-                                    <th>
-                                        Numéro de paiement</th>
+                                    {{-- <th>
+                                        Numéro de paiement</th> --}}
                                     <th>
                                         Date</th>
                                 </tr>
@@ -110,9 +110,9 @@
                                         <td>
                                             {{ $subscription->contact }}
                                         </td>
-                                        <td>
+                                        {{-- <td>
                                             {{ $subscription->payment_number }}
-                                        </td>
+                                        </td> --}}
                                         <td>
                                             {{ $subscription->created_at }}
                                         </td>

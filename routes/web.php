@@ -32,6 +32,8 @@ Route::get('/souscription/{id}/', [SubscriptionController::class, 'souscription'
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 Route::get('/us', [MainController::class, 'us'])->name('us');
 Route::get('/mission', [MainController::class, 'mission'])->name('mission');
+Route::get('/factSheet', [MainController::class, 'factSheet'])->name('factSheet');
+Route::get('/formule', [MainController::class, 'formule'])->name('formule');
 
 
 Route::get('/messageDashboard', [ContactController::class, 'messageDashboard'])->name('messageDashboard');

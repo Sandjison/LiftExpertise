@@ -53,7 +53,7 @@
                         <div>
                             <h6 class="my-0">Frais</h6>
                         </div>
-                        <span class="text-muted">: {{ $plan['price'] }}</span>
+                        <span class="text-muted">: {{ $plan['price'] }} F CFA</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
@@ -69,7 +69,7 @@
                     </li>
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Total</span>
-                        <strong>: {{ $plan['total'] }}</strong>
+                        <strong>: {{ $plan['total'] }} F CFA</strong>
                     </li>
                 </ul>
             </div>

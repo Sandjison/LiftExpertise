@@ -5,8 +5,6 @@ SECTION
 
 */
 
-
-
 // Ecouter l'événement d'ouverture du modal pour démarrer la vidéo
 document.addEventListener('DOMContentLoaded', function () {
     var videoModal = document.getElementById('videoModal');
@@ -24,15 +22,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-
 /* 
 
 SECTION 
 
 
 */
-
 
 // Fonction pour animer un compteur jusqu'à la valeur cible
 function animateCounter(counterId, target) {
@@ -101,28 +96,6 @@ SECTION
 
 */
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    const left = document.querySelector('.left');
-    const right = document.querySelector('.right');
-
-    // Ajoute les classes d'animation après un court délai pour permettre aux éléments de se charger
-    setTimeout(() => {
-        left.classList.add('animate');
-        right.classList.add('animate');
-    }, 100); // Ajustez le délai si nécessaire
-});
-
-
-/* 
-
-SECTION 
-
-
-*/
-
-
-
 function showProfile(button) {
     var imgSrc = button.getAttribute('data-img');
     var profileImg = document.getElementById('profile-img');
@@ -158,6 +131,88 @@ function hideProfile() {
     document.getElementById('profile').style.opacity = 0;
 }
 
+/* 
+
+SECTION 
+
+
+*/
+
+(function() {
+    var autoUpdate = true, // Active l'auto-update
+        timeTrans = 6000; 
+
+    var cdSlider = document.querySelector('.cd-slider'),
+        item = cdSlider.querySelectorAll("li"),
+        nav = cdSlider.querySelector("nav");
+
+    item[0].className = "current_slide";
+
+    function nextSlide() {
+        var currentSlide = cdSlider.querySelector("li.current_slide"),
+            nextElement = currentSlide.nextElementSibling,
+            nextSlide = (nextElement !== null) ? nextElement : item[0];
+
+        currentSlide.className = "";
+        nextSlide.className = "current_slide";
+        updateNavColor(); // Met à jour les couleurs de navigation
+    }
+
+    function prevSlide() {
+        var currentSlide = cdSlider.querySelector("li.current_slide"),
+            prevElement = currentSlide.previousElementSibling,
+            prevSlide = (prevElement !== null) ? prevElement : item[item.length - 1];
+
+        currentSlide.className = "";
+        prevSlide.className = "current_slide";
+        updateNavColor(); // Met à jour les couleurs de navigation
+    }
+
+    function updateNavColor() {
+        var currentSlide = cdSlider.querySelector("li.current_slide");
+
+        var nextColor = (currentSlide.nextElementSibling !== null) 
+            ? currentSlide.nextElementSibling.getAttribute("data-color") 
+            : item[0].getAttribute("data-color");
+
+        var prevColor = (currentSlide.previousElementSibling !== null) 
+            ? currentSlide.previousElementSibling.getAttribute("data-color") 
+            : item[item.length - 1].getAttribute("data-color");
+
+        nav.querySelector(".prev").style.backgroundColor = prevColor;
+        nav.querySelector(".next").style.backgroundColor = nextColor;
+    }
+
+    nav.querySelector(".next").addEventListener('click', function(event) {
+        event.preventDefault();
+        nextSlide();
+        autoUpdate = false; // Désactive l'auto-update lorsque l'utilisateur clique sur "Suivant"
+    });
+
+    nav.querySelector(".prev").addEventListener("click", function(event) {
+        event.preventDefault();
+        prevSlide();
+        autoUpdate = false; // Désactive l'auto-update lorsque l'utilisateur clique sur "Précédent"
+    });
+
+    // Réactive l'auto-update lorsque la souris quitte les boutons
+    nav.querySelector(".next").addEventListener("mouseout", function() {
+        autoUpdate = true; // Réactive l'auto-update
+    });
+
+    nav.querySelector(".prev").addEventListener("mouseout", function() {
+        autoUpdate = true; // Réactive l'auto-update
+    });
+
+    // Auto-update toutes les 10 secondes
+    setInterval(function() {
+        if (autoUpdate) {
+            nextSlide();
+        }
+    }, timeTrans);
+
+})();
+
 
 /* 
 
@@ -167,27 +222,16 @@ SECTION
 */
 
 
+
+
+
+
 /* 
 
 SECTION 
 
 
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

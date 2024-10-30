@@ -135,4 +135,20 @@ class MainController extends Controller
 
         return view('mission');
     }
+
+    public function formule()
+    {
+        if (Auth::check())
+            return redirect()->route('welcome');
+
+        return view('formule');
+    }
+
+    public function factSheet()
+    {
+        if (Auth::check())
+            return redirect()->route('welcome');
+
+        return view('factSheet');
+    }
 }

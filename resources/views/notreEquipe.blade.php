@@ -210,25 +210,24 @@
                     <h1 class="display-6 mt-2">Notation</h1>
                     <span id="profile-rating">4.5/5</span>
                     <div class="progress">
-                        <div class="progress-bar bg-primary" id="profile-rating-bar" style="width: 90%"></div>
+                        <div class="progress-bar bg-blue" id="profile-rating-bar" style="width: 90%"></div>
                     </div>
                     <h1 class="display-6 mt-2">Expérience</h1>
                     <span id="profile-completion">90/100</span>
                     <div class="progress">
-                        <div class="progress-bar bg-primary" id="profile-completion-bar" style="width: 90%"></div>
+                        <div class="progress-bar bg-blue" id="profile-completion-bar" style="width: 90%"></div>
                     </div>
                     <h1 class="display-6 my-2">Temps de réponse</h1>
                     <span id="profile-response-time">Moy 4 Heure
                         /Jour</span>
                     <div class="progress">
-                        <div class="progress-bar bg-primary" id="profile-response-time-bar" style="width: 16.67%">
+                        <div class="progress-bar bg-blue" id="profile-response-time-bar" style="width: 16.67%">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 
     <div class="bg_footer">
         <div class="heading__p">
