@@ -19,6 +19,8 @@ class Subscription extends Model
         'payment_number',
         'plan',
         'contact',
+        'amount',
+        'payment_type',
         'total',
     ];
 

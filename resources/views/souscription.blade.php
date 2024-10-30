@@ -146,12 +146,36 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="payment">Type de paiement</label>
+                            <select class="form-control" id="payment" name="payment_type">
+                                <option value="" disabled selected>Sélectionnez le type de paiement</option>
+                                <option value="inscription" data-payment="inscription"
+                                    data-price={{ $plan['register'] }} >Inscription</option>
+                                <option value="1ere_tranche" data-payment="first-tranch"
+                                    data-price={{ $plan['tranche_1'] }}>1ère Tranche</option>
+                                <option value="2eme_tranche" data-payment="second-tranch"
+                                    data-price={{ $plan['tranche_2'] }}>2ème Tranche</option>
+                            </select>
+
+                        </div>
 
                         <div class="col-md-6 mb-3">
-                            {{-- <label for="payment">Numéro de paiement</label> --}}
+                            <label for="contact">Montant de paiement</label><br>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="amount" id="payment-container" readonly>
+                                <span class="input-group-text">FCFA</span>
+                            </div>
+                        </div>                        
+
+                    </div>
+                    <div class="row">
+
+                        {{-- <div class="col-md-6 mb-3">
+                            <label for="payment">Numéro de paiement</label>
                             <input type="hidden" class="form-control" id="payment"
                                 placeholder="Saisissez votre numéro de paiement ici..." name="payment_number">
-                        </div>
+                        </div> --}}
 
                         <div>
                             <input type="hidden" name="plan" value="{{ $plan['formula'] }}">
@@ -169,6 +193,30 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            $('#payment').on('change', function() {
+
+                var selectedOption = $(this).find('option:selected')
+                var paymentOption = selectedOption.data('payment')
+                var price = selectedOption.data('price')
+
+                if (paymentOption == "inscription") {
+                    $('#payment-container').val(price)
+
+                } else if (paymentOption == "first-tranch") {
+                    $('#payment-container').val(price)
+
+                } else if (paymentOption == "second-tranch") {
+                    $('#payment-container').val(price)
+
+                }
+            })
+        })
+    </script>
+
 </body>
 
 </html>

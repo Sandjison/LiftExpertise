@@ -39,7 +39,7 @@
         </div>
 
         <div class="menu ">
-            <li><a href="#home">Acceuil</a></li>
+            <li><a href="/">Acceuil</a></li>
             <li><a href="{{ route('galerie') }}">Galerie</a></li>
             <li class="dropdown">
                 <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -158,6 +158,29 @@
 
                 </section>
             </li>
+            <li>
+                {{-- data-color="#002AFF" --}}
+                <section id="home" class="section home">
+                    <div class="left  home__data home__container container grid">
+                        <h2>CONDUITE DE</h2>
+
+                        <h1> <span>CAMION BENNE</span> </h1>
+                        <p>Cette formation pratique vous offre l’opportunité de
+                            développer
+                            une expertise dansle marché du travail et
+                            d’améliorer vos
+                            perspectives d’emploi grâce à l’obtention d’une
+                            attestation.</p>
+                        <a href="{{ route('registration') }}" class="login_btn">S'inscrire</a>
+                    </div>
+                    <div class="right">
+                        <img src="{{ asset('assets/images/Remove-bg.ai_1730293052507.png') }}">
+                    </div>
+
+                    <div class="home__triangle home__triangle-1 home__img"></div>
+
+                </section>
+            </li>
         </ul>
         <nav>
             <div><a class="prev" href="#"></a>
@@ -213,7 +236,7 @@
         <section class="formation" id="formation">
             <div class="heading__p">
                 <h1 class="heading"><span>Nos
-                        Formation</span></h1><br />
+                        Formules</span></h1><br />
                 <h3>Choisissez l'offre qui vous convient le
                     mieux</h3><br />
                 <p>Que vous soyez fonctionnaire, homme d'affaire ou
@@ -396,7 +419,7 @@
             </div>
 
             <div class="heading__p">
-                <button onclick="window.location.href='{{ route('notreEquipe') }}'">
+                <button onclick="window.location.href='{{ route('formule') }}'">
                     Plus de formule
                     <img src="{{ asset('assets/images/icons8-flèche-droite-50.png') }}">
                 </button>

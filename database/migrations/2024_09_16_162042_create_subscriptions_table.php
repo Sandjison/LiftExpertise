@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('payment_number')->nullable();
             $table->string('plan');
             $table->string('contact');
+            $table->string('payment_type'); 
+            $table->string('amount');  
             $table->decimal('total'); 
             $table->timestamps();
         });

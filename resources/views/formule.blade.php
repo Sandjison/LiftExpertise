@@ -38,9 +38,8 @@
             </a>
         </div>
 
-        <div class="menu">
-
-            <li><a href="{{ route('welcome') }}">Accueil</a></li>
+        <div class="menu ">
+            <li><a href="/">Acceuil</a></li>
             <li><a href="{{ route('galerie') }}">Galerie</a></li>
             <li class="dropdown">
                 <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -49,9 +48,10 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="{{ route('us') }}">Qui sommes-nous ?</a>
                     <a class="dropdown-item" href="{{ route('mission') }}">Notre mission</a>
+                    <a class="dropdown-item" href="{{ route('formation') }}">Fiche de renseignements</a>
                 </div>
             </li>
-            <li><a href="{{ route('formation') }}">Formation</a></li>
+            <li><a href="{{ route('formule') }}">Formation</a></li>
             <li><a href="{{ route('contact') }}">Contact</a></li>
 
         </div>
@@ -401,6 +401,67 @@
                                 Suspension temporaire</p>
                             <button class="btn btn-primary py-2 px-3 px-md-4 fs-6 fs-md-5" type="button"
                                 onclick="window.location.href='{{ route('souscription', ['id' => 6]) }}'">
+                                Commencer maintenant
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <br/> <br/>
+    <div class="container-fluid price ">
+        <div class="container py-3">
+
+            <div class="row g-5 justify-content-center">
+                
+                <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="price-item bg-light rounded text-center">
+                        <div class="text-center text border-bottom d-flex flex-column justify-content-center p-4"
+                            style="width: 100%; height: 160px;">
+                            <p class="fs-2 fw-bold text-uppercase mb-0" style="color: #000;">
+                                Normale </p>
+                            <div class="d-flex justify-content-center">
+                                <p class="mb-0"><span class="display-5">250
+                                        000 F
+                                        Cfa</span></p>
+                            </div>
+                            <div class="justify-content-center">
+                                <p class="mb-0" style="color: #000;"><span>1 ou 2
+                                        mois ( CAMION BENNE ) </span></p>
+                            </div>
+                        </div>
+                        <div class="text-start p-5">
+                            <p><i class="far fa-check-square"
+                                    style="color: #202DE6; background-color: transparent;"></i>
+                                Connaissance de
+                                l'automobile</p>
+                            <p><i class="far fa-check-square"
+                                    style="color: #202DE6; background-color: transparent;"></i>
+                                Cours théorique</p>
+                            <p><i class="far fa-check-square"
+                                    style="color: #202DE6; background-color: transparent;"></i>
+                                Entretien de l'
+                                automobile</p>
+                            <p><i class="far fa-check-square"
+                                    style="color: #202DE6; background-color: transparent;"></i>
+                                Psychologie du
+                                conducteur</p>
+                            <p><i class="far fa-check-square"
+                                    style="color: #202DE6; background-color: transparent;"></i>
+                                Paiement par tranche</p>
+                            <p><i class="far fa-check-square"
+                                    style="color: #202DE6; background-color: transparent;"></i>
+                                Connaissance de l'automobile
+                            </p>
+                            <p><i class="far fa-check-square"
+                                    style="color: red; background-color: transparent;"></i>
+                                Cours de conduite sur
+                                rendez-vous</p>
+                            <p class="mb-4"><i class="far fa-check-square"
+                                    style="color: red; background-color: transparent;"></i>
+                                Suspension temporaire</p>
+                            <button class="btn btn-primary py-2 px-3 px-md-4 fs-6 fs-md-5" type="button"
+                                onclick="window.location.href='{{ route('souscription', ['id' => 7]) }}'">
                                 Commencer maintenant
                             </button>
                         </div>

@@ -24,8 +24,8 @@
                 LiftExpertise
             </a>
         </div>
-        <div class="menu">
-            <li><a href="{{ route('welcome') }}">Accueil</a></li>
+        <div class="menu ">
+            <li><a href="/">Acceuil</a></li>
             <li><a href="{{ route('galerie') }}">Galerie</a></li>
             <li class="dropdown">
                 <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -34,9 +34,12 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="{{ route('us') }}">Qui sommes-nous ?</a>
                     <a class="dropdown-item" href="{{ route('mission') }}">Notre mission</a>
+                    <a class="dropdown-item" href="{{ route('formation') }}">Fiche de renseignements</a>
                 </div>
-            </li>            <li><a href="{{ route('formation') }}">Formation</a></li>
+            </li>
+            <li><a href="{{ route('formule') }}">Formation</a></li>
             <li><a href="{{ route('contact') }}">Contact</a></li>
+
         </div>
 
         <button class="login_btn"> <a href="{{ route('login') }}" class="text-white">Se connecter</a> </button>

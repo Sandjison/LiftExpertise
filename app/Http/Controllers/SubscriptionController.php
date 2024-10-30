@@ -24,59 +24,78 @@ class SubscriptionController extends Controller
             [
                 "id" => 1,
                 "formula" => "Normale ( CHARIOT )",
-                "price" => "100 000",
+                "price" => "100000",
                 "sceance" => "3 par semaine",
-                "register" => "10 000",
-                "total" => "50 000"
+                "register" => "10000",
+                "tranche_1" => "50000",
+                "tranche_2" => "50000",
+                "total" => "110000"
             ],
             [
                 "id" => 2,
                 "formula" => "Accélérée ( CHARIOT )",
-                "price" => "120 000",
+                "price" => "120000",
                 "sceance" => "5 par semaine",
-                "register" => "10 000",
-                "total" => "60 000"
+                "register" => "10000",
+                "tranche_1" => "60000",
+                "tranche_2" => "60000",
+                "total" => "130000"
             ],
             [
                 "id" => 3,
                 "formula" => "Premium ( CHARIOT )",
-                "price" => "150 000",
+                "price" => "150000",
                 "sceance" => "Variable",
-                "register" => "10 000",
-                "total" => "75 000"
+                "register" => "10000",
+                "tranche_1" => "75000",
+                "tranche_2" => "75000",
+                "total" => "160000"
             ],
             [
                 "id" => 4,
                 "formula" => "Normale ( CHARGEUSE )",
-                "price" => "350 000",
+                "price" => "350000",
                 "sceance" => "3 par semaine",
-                "register" => "20 000",
-                "total" => "125 000"
+                "register" => "20000",
+                "tranche_1" => "175000",
+                "tranche_2" => "175000",
+                "total" => "370000"
             ],
             [
                 "id" => 5,
                 "formula" => "Normale ( GRUE PPM )",
-                "price" => "450 000",
+                "price" => "450000",
                 "sceance" => "3 par semaine",
-                "register" => "20 000",
-                "total" => "225 000"
+                "register" => "20000",
+                "tranche_1" => "225000",
+                "tranche_2" => "225000",
+                "total" => "470000"
             ],
             [
                 "id" => 6,
                 "formula" => "Normale ( HYDRAULIQUE )",
-                "price" => "350 000",
+                "price" => "350000",
                 "sceance" => "3 par semaine",
-                "register" => "20 000",
-                "total" => "125 000"
+                "register" => "20000",
+                "tranche_1" => "175000",
+                "tranche_2" => "175000",
+                "total" => "370000"
+            ],
+            [
+                "id" => 7,
+                "formula" => "Normale ( BENNE )",
+                "price" => "250000",
+                "sceance" => "3 par semaine",
+                "register" => "10000",
+                "tranche_1" => "125000",
+                "tranche_2" => "125000",
+                "total" => "270000"
             ]
         ];
 
         $plan = array_filter($plans, function ($plan) use ($id) {
             return $plan['id'] == $id;
         });
-
-        // if (Auth::check())
-        //     return redirect()->route('welcome');
 
         return view('souscription', ['plan' => array_shift($plan)]);
     }
@@ -86,8 +105,12 @@ class SubscriptionController extends Controller
         $data = $request->all();
 
         $data['plan'] = $request->plan;
+        $data['register'] = $request->register;
+        $data['tranche_1'] = $request->tranche_1;
+        $data['tranche_2'] = $request->tranche_2;
         $data['total'] = $request->total;
 
+      
         // $this->subscriptionInterface->storeSubscription($data);
         $suscriptionId = $this->subscriptionInterface->storeSubscription($data)->id;
         $newTotal = str_replace(" ", "", $request->total);
@@ -104,6 +127,5 @@ class SubscriptionController extends Controller
 
         return  view('souscriptionDashboard', ["subscriptions" => $subscriptions]);
 
-        // return view('souscriptionDashboard');
     }
 }
