@@ -84,8 +84,10 @@
                                         Formule</th>
                                     <th>
                                         Contact</th>
-                                    {{-- <th>
-                                        Numéro de paiement</th> --}}
+                                    <th>
+                                        Tranche</th>
+                                    <th>
+                                        Montant</th>
                                     <th>
                                         Date</th>
                                 </tr>
@@ -110,9 +112,12 @@
                                         <td>
                                             {{ $subscription->contact }}
                                         </td>
-                                        {{-- <td>
-                                            {{ $subscription->payment_number }}
-                                        </td> --}}
+                                        <td>
+                                            {{ $subscription->payment_type  }}
+                                        </td>
+                                        <td>
+                                            {{ $subscription->amount  }}
+                                        </td>
                                         <td>
                                             {{ $subscription->created_at }}
                                         </td>

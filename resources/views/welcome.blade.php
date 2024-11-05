@@ -5,20 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
-    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">    
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/slide.css') }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <script src="https://kit.fontawesome.com/3010b1eaf1.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
 
 </head>
 
@@ -922,7 +918,7 @@
             <h4>Contactez LiftExpertise plus au plus vite !</h4><br />
             <h6>Pour toute demande d’information ou de prise de
                 rendez-vous,
-                contactez-nous au+228 98742882 ou par courriel <br />
+                contactez-nous au +228 98742882 ou par courriel <br />
                 via le formulaire de contact. Au plaisir de vous
                 rencontrer
                 !</h6>
@@ -949,19 +945,17 @@
         |
         Voir la vie du bon coté.</div>
 
-    <!--=============== SCROLLREVEAL ===============-->
     <script src="{{ asset('assets/js/scrollreveal.min.js') }}"></script>
+
     <script src="{{ asset('assets/js/main.js') }}"></script>
 
-    <!-- Include external JavaScript libraries -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/wowjs@1.1.2/dist/wow.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/easing@1.4.1/dist/easing.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/waypoints@4.0.1/lib/jquery.waypoints.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery.counterup@2.1.0/jquery.counterup.min.js"></script>
+
+    <script src="{{ asset('assets/js/jquery.js') }}"></script>
+
+    <script src="{{ asset('assets/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+    <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
 
     <!-- Initialize Swiper -->
     <script>
@@ -990,14 +984,6 @@
         });
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-
-    <!-- Popper.js (requis pour Bootstrap) -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-
-    <!-- JavaScript de Bootstrap -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             setTimeout(function() {
@@ -1006,7 +992,6 @@
             }, 300);
         });
     </script>
-
 
 
 </body>

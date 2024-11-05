@@ -27,7 +27,7 @@ class SubscriptionRequest extends FormRequest
             'gender' => 'required|in:male,female',
             'payment_number' => 'nullable|string|max:20',
             'contact' => 'required|string|max:20',
-            'payment_type' => 'required|string|in:inscription,1ere_tranche,2eme_tranche', 
+            'payment_type' => 'required|string|in:inscription,1ere_tranche,2eme_tranche,avance', 
             'amount' => 'required|string|max:50',
            
         ];
@@ -47,7 +47,7 @@ class SubscriptionRequest extends FormRequest
             'payment_number' => 'Le numéro de paiement est obligatoire.',
             'contact.required' => 'Le contact est obligatoire.',
             'payment_type.required' => 'Le type de paiement est obligatoire.',
-            'payment_type.in' => 'Le type de paiement doit être "inscription", "1ere_tranche" ou "2eme_tranche".',
+            'payment_type.in' => 'Le type de paiement doit être "inscription", "1ere_tranche", "2eme_tranche" ou "avance".',
             'amount.required' => 'Le montant est obligatoire.',
            
         ];

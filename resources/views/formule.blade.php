@@ -235,13 +235,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div> <br/> <br/>
-    <div class="container-fluid price ">
-        <div class="container py-3">
-
-            <div class="row g-5 justify-content-center">
+         
                 <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="price-item bg-light rounded text-center">
                         <div class="text-center text-dark border-bottom d-flex flex-column justify-content-center p-4"
@@ -406,13 +400,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div> <br/> <br/>
-    <div class="container-fluid price ">
-        <div class="container py-3">
-
-            <div class="row g-5 justify-content-center">
                 
                 <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="price-item bg-light rounded text-center">
@@ -421,7 +408,7 @@
                             <p class="fs-2 fw-bold text-uppercase mb-0" style="color: #000;">
                                 Normale </p>
                             <div class="d-flex justify-content-center">
-                                <p class="mb-0"><span class="display-5">250
+                                <p class="mb-0"><span class="display-5">300
                                         000 F
                                         Cfa</span></p>
                             </div>
@@ -476,7 +463,7 @@
             <h4>Contactez LiftExpertise plus au plus vite !</h4><br />
             <h6>Pour toute demande d’information ou de prise de
                 rendez-vous,
-                contactez-nous au+228 98742882 ou par courriel <br />
+                contactez-nous au +228 98742882 ou par courriel <br />
                 via le formulaire de contact. Au plaisir de vous
                 rencontrer
                 !</h6>

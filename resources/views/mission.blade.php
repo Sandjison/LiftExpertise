@@ -56,7 +56,6 @@
 
     </section>
 
-
     <section class="bg-primary-gradient" id="faq">
         <div class="bg-holder"
             style="background-image:url(assets/img/gallery/faq-bg.png);background-position:right;background-size:contain;">
@@ -179,15 +178,12 @@
         </div>
     </section>
 
-
-
-
     <div class="bg_footer">
         <div class="heading__p">
             <h4>Contactez LiftExpertise plus au plus vite !</h4><br />
             <h6>Pour toute demande d’information ou de prise de
                 rendez-vous,
-                contactez-nous au+228 98742882 ou par courriel <br />
+                contactez-nous au +228 98742882 ou par courriel <br />
                 via le formulaire de contact. Au plaisir de vous
                 rencontrer
                 !</h6>
@@ -212,19 +208,9 @@
     </div>
     <div class="heading__p">Créé par <strong>Mr EKOUE-BLA Sandjison</strong> | Voir la vie du bon coté.</div>
 
-    <!--=============== SCROLLREVEAL ===============-->
-    <script src="{{ asset('assets/js/scrollreveal.min.js') }}"></script>
-    <script src="{{ asset('assets/js/main.js') }}"></script>
-
-    <!-- Include external JavaScript libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/wowjs@1.1.2/dist/wow.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/easing@1.4.1/dist/easing.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/waypoints@4.0.1/lib/jquery.waypoints.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery.counterup@2.1.0/jquery.counterup.min.js"></script>
+
+    <script src="{{ asset('assets/js/jquery.js') }}"></script>
 
     <script>
         var menu_toggle = document.querySelector('.menu_toggle');

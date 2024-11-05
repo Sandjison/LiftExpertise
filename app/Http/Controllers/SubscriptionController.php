@@ -18,8 +18,12 @@ class SubscriptionController extends Controller
         $this->subscriptionInterface = $subscriptionInterface;
     }
 
+
+
     public function souscription($id)
     {
+        $advanceDefault = config('payment.advance_default'); 
+
         $plans = [
             [
                 "id" => 1,
@@ -29,6 +33,7 @@ class SubscriptionController extends Controller
                 "register" => "10000",
                 "tranche_1" => "50000",
                 "tranche_2" => "50000",
+                "advance" => $advanceDefault,
                 "total" => "110000"
             ],
             [
@@ -39,6 +44,7 @@ class SubscriptionController extends Controller
                 "register" => "10000",
                 "tranche_1" => "60000",
                 "tranche_2" => "60000",
+                "advance" => $advanceDefault,
                 "total" => "130000"
             ],
             [
@@ -49,6 +55,7 @@ class SubscriptionController extends Controller
                 "register" => "10000",
                 "tranche_1" => "75000",
                 "tranche_2" => "75000",
+                "advance" => $advanceDefault,
                 "total" => "160000"
             ],
             [
@@ -59,6 +66,7 @@ class SubscriptionController extends Controller
                 "register" => "20000",
                 "tranche_1" => "175000",
                 "tranche_2" => "175000",
+                "advance" => $advanceDefault,
                 "total" => "370000"
             ],
             [
@@ -69,6 +77,7 @@ class SubscriptionController extends Controller
                 "register" => "20000",
                 "tranche_1" => "225000",
                 "tranche_2" => "225000",
+                "advance" => $advanceDefault,
                 "total" => "470000"
             ],
             [
@@ -79,19 +88,22 @@ class SubscriptionController extends Controller
                 "register" => "20000",
                 "tranche_1" => "175000",
                 "tranche_2" => "175000",
+                "advance" => $advanceDefault,
                 "total" => "370000"
             ],
             [
                 "id" => 7,
                 "formula" => "Normale ( BENNE )",
-                "price" => "250000",
+                "price" => "300000",
                 "sceance" => "3 par semaine",
-                "register" => "10000",
-                "tranche_1" => "125000",
-                "tranche_2" => "125000",
-                "total" => "270000"
+                "register" => "20000",
+                "tranche_1" => "150000",
+                "tranche_2" => "150000",
+                "advance" => $advanceDefault,
+                "total" => "320000"
             ]
         ];
+
 
         $plan = array_filter($plans, function ($plan) use ($id) {
             return $plan['id'] == $id;
@@ -100,23 +112,23 @@ class SubscriptionController extends Controller
         return view('souscription', ['plan' => array_shift($plan)]);
     }
 
+
     public function subscription(SubscriptionRequest $request)
     {
         $data = $request->all();
 
-        $data['plan'] = $request->plan;
-        $data['register'] = $request->register;
-        $data['tranche_1'] = $request->tranche_1;
-        $data['tranche_2'] = $request->tranche_2;
+        $data['plan'] = $request->plan;      
         $data['total'] = $request->total;
 
-      
+        
         // $this->subscriptionInterface->storeSubscription($data);
         $suscriptionId = $this->subscriptionInterface->storeSubscription($data)->id;
         $newTotal = str_replace(" ", "", $request->total);
         $operator = strtoupper($request->payment);
 
-        return redirect("https://paygateglobal.com/v1/page?token=d4cfd991-0fb8-4ebb-aea2-0db502686678&amount=$newTotal&description=test&identifier=$suscriptionId&phone_number=$request->payment_number&network=$operator");
+        $amount = $request->amount;
+
+        return redirect("https://paygateglobal.com/v1/page?token=d4cfd991-0fb8-4ebb-aea2-0db502686678&amount=$amount&description=test&identifier=$suscriptionId&phone_number=$request->payment_number&network=$operator");
 
         // return redirect()->back()->with('success', 'Inscription réussie.');
     }
@@ -126,6 +138,5 @@ class SubscriptionController extends Controller
         $subscriptions = Subscription::all();
 
         return  view('souscriptionDashboard', ["subscriptions" => $subscriptions]);
-
     }
 }

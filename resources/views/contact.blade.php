@@ -125,7 +125,7 @@
             <h4>Contactez LiftExpertise plus au plus vite !</h4><br />
             <h6>Pour toute demande d’information ou de prise de
                 rendez-vous,
-                contactez-nous au+228 98742882 ou par courriel <br />
+                contactez-nous au +228 98742882 ou par courriel <br />
                 via le formulaire de contact. Au plaisir de vous
                 rencontrer
                 !</h6>

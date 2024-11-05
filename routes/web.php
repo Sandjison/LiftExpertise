@@ -54,6 +54,7 @@ Route::post('/contact/send-mail/processing', [ContactController::class, 'contact
 Route::post('/subscription/processing', [SubscriptionController::class, 'subscription'])->name('subscription.process');
 
 
-// Route::get('/dasboardProfile', [UserController::class, 'update_profil'])->middleware('auth')->name('dasboardProfile');
-
 Route::post('/dasboardProfile', [UserController::class, 'update_profil'])->middleware('auth')->name('dasboardProfile');
+
+
+Route::post('/dashboard', [UserController::class, 'update_profil_admin'])->middleware('auth')->name('dashboard');

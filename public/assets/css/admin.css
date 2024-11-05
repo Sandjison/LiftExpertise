@@ -95,6 +95,34 @@ side-head span {
     background-image: url(../images/R\ \(2\).png);
 }
 
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-pic-container {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.profile-pic-container button {
+    border: none;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 3px solid #ddd; 
+}
+
+
 .profile-img {
     height: 80px;
     width: 80px;

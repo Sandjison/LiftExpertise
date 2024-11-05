@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <title>Tableau de bord Admin</title>
     <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}"> --}}
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet"
         href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
 
 </head>
 
@@ -22,11 +24,24 @@
                 <h3>L<span>iftExpertise</span></h3>
             </div>
             <div class="side-content">
-                <div class="profile">
-                    <div class="profile-img bg-img">
+                <form action="{{ route('dashboard') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+
+                    <div class="profile">
+                        {{-- <div class="profile-img bg-img">
+                        </div> --}}
+                        <div class="profile-pic-container">
+                            <button type="button" id="profile-pic-button"
+                                onclick="document.getElementById('profile_picture').click();">
+                                <img src="{{ Auth::user()->profile_picture ? asset('uploads/' . Auth::user()->profile_picture) : asset('assets/images/R (2).png') }}"
+                                    alt="Photo de Profil" id="profile-pic-preview" class="profile-pic">
+                            </button>
+                            <input type="file" name="profile_picture" id="profile_picture" style="display: none;"
+                                accept="image/*" onchange="previewImage(event)">
+                        </div>
+                        <h4>David Green</h4>
                     </div>
-                    <h4>David Green</h4>
-                </div>
+                </form>
                 <div class="side-menu">
                     <ul>
                         <li>
@@ -207,6 +222,7 @@
             });
         </script>
 
+
 </body>
 
 </html>
@@ -284,7 +300,7 @@
                                     </thead>
                                     <tbody class="custom-tbody">
                                         <tr>
-                                            <td>Formation (Normale) sur une
+                                            <td>Formation chariot (Normale) sur une
                                                 durée de 2 mois
                                                 répartie sur 3 séances par
                                                 semaine.
@@ -313,7 +329,7 @@
                                     </thead>
                                     <tbody class="custom-tbody">
                                         <tr>
-                                            <td>Formation (Accélérée)
+                                            <td>Formation chariot (Accélérée)
                                                 sur une durée de 3
                                                 semaines répartie sur
                                                 5 séances par semaine.
@@ -343,7 +359,7 @@
                                     </thead>
                                     <tbody class="custom-tbody">
                                         <tr>
-                                            <td>Formation (Accélérée)
+                                            <td>Formation chariot (Accélérée)
                                                 sur une durée de 2 mois
                                                 répartie sur 5 séances
                                                 par semaine.
@@ -373,7 +389,7 @@
                                     </thead>
                                     <tbody class="custom-tbody">
                                         <tr>
-                                            <td>Formation (Normale)
+                                            <td>Formation chariot (Normale)
                                                 sur une durée de 1 mois
                                                 répartie sur 3 séances
                                                 par semaine.
@@ -386,6 +402,147 @@
                                             <td>Au centre de de kara
                                                 ( qui se situe derrière
                                                 Université de kara ).
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div><br /><br />
+                        <div class="container mt-5">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>FORMATION</th>
+                                            <th>DATE et HEURE</th>
+                                            <th>LIEU</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="custom-tbody">
+                                        <tr>
+                                            <td>Formation chargeuse (Normale)
+                                                sur une durée de 3 mois
+                                                répartie sur 3 séances
+                                                par semaine.
+                                            </td>
+                                            <td>La formation se tiendra
+                                                16 Janvier 2025 à 9
+                                                heures ( lundi, mercredi
+                                                , vendredi ).
+                                            </td>
+                                            <td>Au centre d'aného.
+                                               
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div><br /><br />
+                        <div class="container mt-5">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>FORMATION</th>
+                                            <th>DATE et HEURE</th>
+                                            <th>LIEU</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="custom-tbody">
+                                        <tr>
+                                            <td>Formation grue ppm (Normale)
+                                                sur une durée de 3 mois
+                                                répartie sur 3 séances
+                                                par semaine.
+                                            </td>
+                                            <td>La formation se tiendra
+                                                12 février 2025 à 9
+                                                heures ( lundi, mercredi
+                                                , vendredi ).
+                                            </td>
+                                            <td>Au centre d'aného.
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div><br /><br />
+                        <div class="container mt-5">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>FORMATION</th>
+                                            <th>DATE et HEURE</th>
+                                            <th>LIEU</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="custom-tbody">
+                                        <tr>
+                                            <td>Formation pelle hydraulique (Normale)
+                                                sur une durée de 3 mois
+                                                répartie sur 3 séances
+                                                par semaine.
+                                            </td>
+                                            <td>La formation se tiendra
+                                                28 février 2025 à 9
+                                                heures ( lundi, mercredi
+                                                , vendredi ).
+                                            </td>
+                                            <td>Au centre de zone- franche ( qui se situe derrière NP Gandour ).
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div><br /><br />
+                        <div class="container mt-5">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>FORMATION</th>
+                                            <th>DATE et HEURE</th>
+                                            <th>LIEU</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="custom-tbody">
+                                        <tr>
+                                            <td>Formation camion benne (Normale)
+                                                sur une durée de 3 mois
+                                                répartie sur 3 séances
+                                                par semaine.
+                                            </td>
+                                            <td>La formation se tiendra
+                                                28 février 2025 à 9
+                                                heures ( lundi, mercredi
+                                                , vendredi ).
+                                            </td>
+                                            <td>Au port autonome de Lomé.
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div><br /><br />
+                        <div class="container mt-5">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>FORMATION</th>
+                                            <th>DATE et HEURE</th>
+                                            <th>LIEU</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="custom-tbody">
+                                        <tr>
+                                            <td>Formation grue ppm (Normale)
+                                                sur une durée de 2 mois
+                                                répartie sur 3 séances
+                                                par semaine.
+                                            </td>
+                                            <td>La formation se tiendra
+                                                28 février 2025 à 9
+                                                heures ( lundi, mercredi
+                                                , vendredi ).
+                                            </td>
+                                            <td>Au port autonome de Lomé.
                                         </tr>
                                     </tbody>
                                 </table>

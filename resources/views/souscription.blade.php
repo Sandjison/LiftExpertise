@@ -151,24 +151,25 @@
                             <select class="form-control" id="payment" name="payment_type">
                                 <option value="" disabled selected>Sélectionnez le type de paiement</option>
                                 <option value="inscription" data-payment="inscription"
-                                    data-price={{ $plan['register'] }} >Inscription</option>
+                                    data-price="{{ $plan['register'] }}">Inscription</option>
                                 <option value="1ere_tranche" data-payment="first-tranch"
-                                    data-price={{ $plan['tranche_1'] }}>1ère Tranche</option>
+                                    data-price="{{ $plan['tranche_1'] }}">1ère Tranche</option>
                                 <option value="2eme_tranche" data-payment="second-tranch"
-                                    data-price={{ $plan['tranche_2'] }}>2ème Tranche</option>
+                                    data-price="{{ $plan['tranche_2'] }}">2ème Tranche</option>
+                                <option value="avance" data-payment="advance-tranch"
+                                    data-price="{{ $plan['advance'] }}">Inscription + Avance</option>
                             </select>
-
                         </div>
 
                         <div class="col-md-6 mb-3">
-                            <label for="contact">Montant de paiement</label><br>
+                            <label for="payment-container">Montant de paiement</label><br>
                             <div class="input-group">
-                                <input type="text" class="form-control" name="amount" id="payment-container" readonly>
+                                <input type="number" class="form-control" name="amount" id="payment-container">
                                 <span class="input-group-text">FCFA</span>
                             </div>
-                        </div>                        
-
+                        </div>
                     </div>
+
                     <div class="row">
 
                         {{-- <div class="col-md-6 mb-3">
@@ -210,6 +211,9 @@
                     $('#payment-container').val(price)
 
                 } else if (paymentOption == "second-tranch") {
+                    $('#payment-container').val(price)
+
+                } else if (paymentOption == "advance-tranch") {
                     $('#payment-container').val(price)
 
                 }

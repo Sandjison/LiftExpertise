@@ -1,8 +1,4 @@
 
-
-
-
-
 .bg-blue {
     background-color: #202DE6;
 }
@@ -516,22 +512,17 @@ header button {
     }
 }
 
-
-
-
-/* 
-
-SECTION 
-
-*/
-
-
 /* 
 
 SECTION  %%
 
 
 */
+
+.tableau .heading__p{
+    text-align: center;
+    padding-top: 0;
+}
 
 .heading__p {
     text-align: center;

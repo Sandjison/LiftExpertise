@@ -36,4 +36,29 @@ class UserController extends Controller
 
         return view('dasboardProfile', ['user' => $user]);
     }
+
+
+    public function update_profil_admin(Request $request)
+    {
+        $user = Auth::user();
+
+        // Gestion de l'upload de l'image de profil
+        if ($request->hasFile('profile_picture')) {
+            // Supprimer l'ancienne image si elle existe
+            if ($user->profile_picture && File::exists(public_path('uploads/' . $user->profile_picture))) {
+                File::delete(public_path('uploads/' . $user->profile_picture));
+            }
+
+            // Sauvegarder la nouvelle image
+            $avatar = $request->file('profile_picture');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            $avatar->move(public_path('uploads'), $filename);
+            $user->profile_picture = $filename;
+        }
+
+        // Sauvegarder les modifications de l'utilisateur
+        $user->save();
+
+        return view('dashboard');
+    }
 }
