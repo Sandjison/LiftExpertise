@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet"
         href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+        <link rel="icon" type="image/png" href="{{ asset('assets/images/Remove-bg.ai_1723043103315.png') }}">
+
 </head>
 
 <body>
@@ -19,10 +21,24 @@
             <h3>L<span>iftExpertise</span></h3>
         </div>
         <div class="side-content">
-            <div class="profile">
-                <div class="profile-img bg-img"></div>
-                <h4>David Green</h4>
-            </div>
+            <form action="{{ route('dashboard') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+
+                <div class="profile">
+                    {{-- <div class="profile-img bg-img">
+                    </div> --}}
+                    <div class="profile-pic-container">
+                        <button type="button" id="profile-pic-button"
+                            onclick="document.getElementById('profile_picture').click();">
+                            <img src="{{ Auth::user()->profile_picture ? asset('uploads/' . Auth::user()->profile_picture) : asset('assets/images/R (2).png') }}"
+                                alt="Photo de Profil" id="profile-pic-preview" class="profile-pic">
+                        </button>
+                        <input type="file" name="profile_picture" id="profile_picture" style="display: none;"
+                            accept="image/*" onchange="previewImage(event)">
+                    </div>
+                    <h4>KODJO JEAN</h4>
+                </div>
+            </form>
             <div class="side-menu">
                 <ul>
                     <li>
@@ -144,7 +160,9 @@
         });
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+    <script src="{{ asset('assets/js/jquery.js') }}"></script>
+
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function() {

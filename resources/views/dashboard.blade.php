@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet"
         href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+        <link rel="icon" type="image/png" href="{{ asset('assets/images/Remove-bg.ai_1723043103315.png') }}">
+
 
 
 </head>
@@ -39,7 +41,7 @@
                             <input type="file" name="profile_picture" id="profile_picture" style="display: none;"
                                 accept="image/*" onchange="previewImage(event)">
                         </div>
-                        <h4>David Green</h4>
+                        <h4>KODJO JEAN</h4>
                     </div>
                 </form>
                 <div class="side-menu">

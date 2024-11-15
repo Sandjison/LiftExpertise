@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/Remove-bg.ai_1723043103315.png') }}">
+
 
     <title>Equipe</title>
 </head>
@@ -249,7 +251,7 @@
             <div class="footer_2">
                 <img src="{{ asset('assets/images//icons8-email-100.png') }}">
                 <h6>Courriel</h6>
-                <p>ekoueblasandjison@gmail.com</p>
+                <p> <a href="mailto:ekoueblasandjison@gmail.com" style="color: #fff">ekoueblasandjison@gmail.com</a></p>
             </div>
             <div class="footer_3">
                 <img src="{{ asset('assets/images/icons8-position-100.png') }}">

@@ -19,8 +19,10 @@
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css" />
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/Remove-bg.ai_1723043103315.png') }}">
 
-    <title>Galerie</title>
+
+    <title>Formation</title>
 </head>
 
 <body>
@@ -77,7 +79,7 @@
                             <p class="fs-2 fw-bold text-uppercase mb-0" style="color: #000;">
                                 Normale</p>
                             <div class="d-flex justify-content-center">
-                                <p class="mb-0"><span class="display-5" style="color: #202DE6;">100
+                                <p class="mb-0"><span class="display-6" style="color: #202DE6;">100
                                         000 F
                                         Cfa</span></p>
                             </div>
@@ -135,7 +137,7 @@
                             <p class="fs-2 fw-bold text-uppercase mb-0" style="color: #000;">
                                 Accélérée</p>
                             <div class="d-flex justify-content-center">
-                                <p class="mb-0"><span class="display-5">120
+                                <p class="mb-0"><span class="display-6">120
                                         000 F
                                         Cfa</span></p>
                             </div>
@@ -189,7 +191,7 @@
                                 Premium
                                 ou VIP</p>
                             <div class="d-flex justify-content-center">
-                                <p class="mb-0"><span class="display-5">150
+                                <p class="mb-0"><span class="display-6">150
                                         000 F
                                         Cfa</span></p>
                             </div>
@@ -243,7 +245,7 @@
                             <p class="fs-2 fw-bold text-uppercase mb-0" style="color: #000;">
                                 Normale</p>
                             <div class="d-flex justify-content-center">
-                                <p class="mb-0"><span class="display-5" style="color: #202DE6;">350
+                                <p class="mb-0"><span class="display-6" style="color: #202DE6;">350
                                         000 F
                                         Cfa</span></p>
                             </div>
@@ -301,7 +303,7 @@
                             <p class="fs-2 fw-bold text-uppercase mb-0" style="color: #000;">
                                 Normale</p>
                             <div class="d-flex justify-content-center">
-                                <p class="mb-0"><span class="display-5">450
+                                <p class="mb-0"><span class="display-6">450
                                         000 F
                                         Cfa</span></p>
                             </div>
@@ -354,7 +356,7 @@
                             <p class="fs-2 fw-bold text-uppercase mb-0" style="color: #000;">
                                 Normale </p>
                             <div class="d-flex justify-content-center">
-                                <p class="mb-0"><span class="display-5">350
+                                <p class="mb-0"><span class="display-6">350
                                         000 F
                                         Cfa</span></p>
                             </div>
@@ -408,7 +410,7 @@
                             <p class="fs-2 fw-bold text-uppercase mb-0" style="color: #000;">
                                 Normale </p>
                             <div class="d-flex justify-content-center">
-                                <p class="mb-0"><span class="display-5">300
+                                <p class="mb-0"><span class="display-6">300
                                         000 F
                                         Cfa</span></p>
                             </div>
@@ -477,7 +479,7 @@
             <div class="footer_2">
                 <img src="{{ asset('assets/images//icons8-email-100.png') }}">
                 <h6>Courriel</h6>
-                <p>ekoueblasandjison@gmail.com</p>
+                <p> <a href="mailto:ekoueblasandjison@gmail.com" style="color: #fff">ekoueblasandjison@gmail.com</a></p>
             </div>
             <div class="footer_3">
                 <img src="{{ asset('assets/images/icons8-position-100.png') }}">

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/tailwindcss-colors.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/Remove-bg.ai_1723043103315.png') }}">
+
     <title>Tableau de bord Utilisateur</title>
 </head>
 

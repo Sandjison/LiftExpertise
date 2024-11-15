@@ -19,11 +19,10 @@ class ContactController extends Controller
     {
         $contacts = Contact::all();
 
-        return  view('messageDashboard', ["contacts"=>$contacts]) ;
-
+        return  view('messageDashboard', ["contacts" => $contacts]);
     }
 
-     public function contactSendEmail(Request $request)
+    public function contactSendEmail(Request $request)
     {
         $data = [
             "firstName" => $request->firstName,
@@ -47,5 +46,4 @@ class ContactController extends Controller
 
         // return view('contact');
     }
-
 }
