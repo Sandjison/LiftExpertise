@@ -59,7 +59,7 @@
 
                         <label for="name">Nom complet</label>
                         <input type="text" id="name" name="name"
-                            placeholder="Saisir votre nom complet ici..." value=" {{ Auth::user()->name }}" readonly>
+                            placeholder="Saisir votre nom complet ici..." value=" {{ Auth::user()->name }}">
 
                         <label for="phone">Numéro de téléphone</label>
                         <input type="tel" id="phone" name="phone"

@@ -104,6 +104,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
             'Psr\\Clock\\' => 10,
             'PhpParser\\' => 10,
             'PhpOption\\' => 10,
+            'Paydunya\\' => 9,
         ),
         'N' => 
         array (
@@ -365,6 +366,10 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
         ),
+        'Paydunya\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paydunya/paydunya/src',
+        ),
         'NunoMaduro\\Collision\\' => 
         array (
             0 => __DIR__ . '/..' . '/nunomaduro/collision/src',
@@ -512,21 +517,36 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'R' => 
+        array (
+            'Requests' => 
+            array (
+                0 => __DIR__ . '/..' . '/rmccue/requests/library',
+            ),
+        ),
+    );
+
     public static $classMap = array (
+        'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
         'App\\Http\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/AuthController.php',
+        'App\\Http\\Controllers\\ContactController' => __DIR__ . '/../..' . '/app/Http/Controllers/ContactController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\MainController' => __DIR__ . '/../..' . '/app/Http/Controllers/MainController.php',
         'App\\Http\\Controllers\\SubscriptionController' => __DIR__ . '/../..' . '/app/Http/Controllers/SubscriptionController.php',
+        'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Middleware\\CheckRole' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckRole.php',
         'App\\Http\\Requests\\Authentication\\ForgottenPasswordRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Authentication/ForgottenPasswordRequest.php',
         'App\\Http\\Requests\\Authentication\\LoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Authentication/LoginRequest.php',
         'App\\Http\\Requests\\Authentication\\RegistrationRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Authentication/RegistrationRequest.php',
+        'App\\Http\\Requests\\ContactRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ContactRequest.php',
         'App\\Http\\Requests\\SubscriptionRequest' => __DIR__ . '/../..' . '/app/Http/Requests/SubscriptionRequest.php',
         'App\\Interfaces\\AuthenticationInterface' => __DIR__ . '/../..' . '/app/Interfaces/AuthenticationInterface.php',
         'App\\Interfaces\\ContactInterface' => __DIR__ . '/../..' . '/app/Interfaces/ContactInterface.php',
         'App\\Interfaces\\SubscriptionInterface' => __DIR__ . '/../..' . '/app/Interfaces/SubscriptionInterface.php',
         'App\\Mail\\ContactMail' => __DIR__ . '/../..' . '/app/Mail/ContactMail.php',
         'App\\Mail\\OtpCodeEmail' => __DIR__ . '/../..' . '/app/Mail/OtpCodeEmail.php',
+        'App\\Models\\Contact' => __DIR__ . '/../..' . '/app/Models/Contact.php',
         'App\\Models\\OtpCode' => __DIR__ . '/../..' . '/app/Models/OtpCode.php',
         'App\\Models\\Subscription' => __DIR__ . '/../..' . '/app/Models/Subscription.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
@@ -4518,6 +4538,15 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'PHPUnit\\Util\\Xml' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml/Xml.php',
         'PHPUnit\\Util\\Xml\\Loader' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml/Loader.php',
         'PHPUnit\\Util\\Xml\\XmlException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Exception/XmlException.php',
+        'Paydunya\\Checkout' => __DIR__ . '/..' . '/paydunya/paydunya/src/Checkout.php',
+        'Paydunya\\Checkout\\CheckoutInvoice' => __DIR__ . '/..' . '/paydunya/paydunya/src/Checkout/CheckoutInvoice.php',
+        'Paydunya\\Checkout\\OnsiteInvoice' => __DIR__ . '/..' . '/paydunya/paydunya/src/Checkout/OnsiteInvoice.php',
+        'Paydunya\\Checkout\\Store' => __DIR__ . '/..' . '/paydunya/paydunya/src/Checkout/Store.php',
+        'Paydunya\\CustomData' => __DIR__ . '/..' . '/paydunya/paydunya/src/CustomData.php',
+        'Paydunya\\DirectPay' => __DIR__ . '/..' . '/paydunya/paydunya/src/DirectPay.php',
+        'Paydunya\\Paydunya' => __DIR__ . '/..' . '/paydunya/paydunya/src/Paydunya.php',
+        'Paydunya\\Setup' => __DIR__ . '/..' . '/paydunya/paydunya/src/Setup.php',
+        'Paydunya\\Utilities' => __DIR__ . '/..' . '/paydunya/paydunya/src/Utilities.php',
         'PharIo\\Manifest\\Application' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Application.php',
         'PharIo\\Manifest\\ApplicationName' => __DIR__ . '/..' . '/phar-io/manifest/src/values/ApplicationName.php',
         'PharIo\\Manifest\\Author' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Author.php',
@@ -5223,6 +5252,64 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'Ramsey\\Uuid\\UuidInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidInterface.php',
         'Ramsey\\Uuid\\Validator\\GenericValidator' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/GenericValidator.php',
         'Ramsey\\Uuid\\Validator\\ValidatorInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/ValidatorInterface.php',
+        'Requests' => __DIR__ . '/..' . '/rmccue/requests/library/Requests.php',
+        'Requests_Auth' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Auth.php',
+        'Requests_Auth_Basic' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Auth/Basic.php',
+        'Requests_Cookie' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Cookie.php',
+        'Requests_Cookie_Jar' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Cookie/Jar.php',
+        'Requests_Exception' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception.php',
+        'Requests_Exception_HTTP' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP.php',
+        'Requests_Exception_HTTP_304' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/304.php',
+        'Requests_Exception_HTTP_305' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/305.php',
+        'Requests_Exception_HTTP_306' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/306.php',
+        'Requests_Exception_HTTP_400' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/400.php',
+        'Requests_Exception_HTTP_401' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/401.php',
+        'Requests_Exception_HTTP_402' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/402.php',
+        'Requests_Exception_HTTP_403' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/403.php',
+        'Requests_Exception_HTTP_404' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/404.php',
+        'Requests_Exception_HTTP_405' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/405.php',
+        'Requests_Exception_HTTP_406' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/406.php',
+        'Requests_Exception_HTTP_407' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/407.php',
+        'Requests_Exception_HTTP_408' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/408.php',
+        'Requests_Exception_HTTP_409' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/409.php',
+        'Requests_Exception_HTTP_410' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/410.php',
+        'Requests_Exception_HTTP_411' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/411.php',
+        'Requests_Exception_HTTP_412' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/412.php',
+        'Requests_Exception_HTTP_413' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/413.php',
+        'Requests_Exception_HTTP_414' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/414.php',
+        'Requests_Exception_HTTP_415' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/415.php',
+        'Requests_Exception_HTTP_416' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/416.php',
+        'Requests_Exception_HTTP_417' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/417.php',
+        'Requests_Exception_HTTP_418' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/418.php',
+        'Requests_Exception_HTTP_428' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/428.php',
+        'Requests_Exception_HTTP_429' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/429.php',
+        'Requests_Exception_HTTP_431' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/431.php',
+        'Requests_Exception_HTTP_500' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/500.php',
+        'Requests_Exception_HTTP_501' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/501.php',
+        'Requests_Exception_HTTP_502' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/502.php',
+        'Requests_Exception_HTTP_503' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/503.php',
+        'Requests_Exception_HTTP_504' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/504.php',
+        'Requests_Exception_HTTP_505' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/505.php',
+        'Requests_Exception_HTTP_511' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/511.php',
+        'Requests_Exception_HTTP_Unknown' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/HTTP/Unknown.php',
+        'Requests_Exception_Transport' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/Transport.php',
+        'Requests_Exception_Transport_cURL' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Exception/Transport/cURL.php',
+        'Requests_Hooker' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Hooker.php',
+        'Requests_Hooks' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Hooks.php',
+        'Requests_IDNAEncoder' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/IDNAEncoder.php',
+        'Requests_IPv6' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/IPv6.php',
+        'Requests_IRI' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/IRI.php',
+        'Requests_Proxy' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Proxy.php',
+        'Requests_Proxy_HTTP' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Proxy/HTTP.php',
+        'Requests_Response' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Response.php',
+        'Requests_Response_Headers' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Response/Headers.php',
+        'Requests_SSL' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/SSL.php',
+        'Requests_Session' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Session.php',
+        'Requests_Transport' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Transport.php',
+        'Requests_Transport_cURL' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Transport/cURL.php',
+        'Requests_Transport_fsockopen' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Transport/fsockopen.php',
+        'Requests_Utility_CaseInsensitiveDictionary' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Utility/CaseInsensitiveDictionary.php',
+        'Requests_Utility_FilteredIterator' => __DIR__ . '/..' . '/rmccue/requests/library/Requests/Utility/FilteredIterator.php',
         'SQLite3Exception' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/SQLite3Exception.php',
         'SebastianBergmann\\CliParser\\AmbiguousOptionException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/AmbiguousOptionException.php',
         'SebastianBergmann\\CliParser\\Exception' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/Exception.php',
@@ -6477,6 +6564,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423::$classMap;
 
         }, null, ClassLoader::class);

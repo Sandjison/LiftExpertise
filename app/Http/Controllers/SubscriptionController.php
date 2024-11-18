@@ -19,7 +19,6 @@ class SubscriptionController extends Controller
     }
 
 
-
     public function souscription($id)
     {
         $advanceDefault = config('payment.advance_default'); 
@@ -103,7 +102,7 @@ class SubscriptionController extends Controller
                 "total" => "320000"
             ]
         ];
-
+ 
 
         $plan = array_filter($plans, function ($plan) use ($id) {
             return $plan['id'] == $id;

@@ -58,3 +58,5 @@ Route::post('/dasboardProfile', [UserController::class, 'update_profil'])->middl
 
 
 Route::post('/dashboard', [UserController::class, 'update_profil_admin'])->middleware('auth')->name('dashboard');
+
+Route::post('/paySuscription', [SubscriptionController::class, 'paySuscription'])->name('paySuscription');

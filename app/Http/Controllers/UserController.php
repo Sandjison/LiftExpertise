@@ -14,6 +14,7 @@ class UserController extends Controller
         $user = Auth::user();
 
         // Mise à jour des attributs de l'utilisateur
+        $user->name = $request->name;
         $user->phone = $request->phone;
         $user->address = $request->address;
 
