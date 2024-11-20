@@ -59,17 +59,21 @@
 
     <div class="grid-wrap">
         <ul>
-            <li><img src="{{ asset('assets/images/IMG-20240821-WA0097.jpg') }}"></li>
-            <li><img src="{{ asset('assets/images/IMG-20240819-WA0221.jpg') }}"></li>
-            <li><img src="{{ asset('assets/images/IMG-20240820-WA0083.jpg') }}"></li>
-            <li><img src="{{ asset('assets/images/IMG-20240820-WA0085.jpg') }}"></li>
-            <li><img src="{{ asset('assets/images/IMG-20240820-WA0105.jpg') }}"></li>
-            <li><img src="{{ asset('assets/images/IMG-20240820-WA0130.jpg') }}"> </li>
-            <li><img src="{{ asset('assets/images/IMG-20240820-WA0142.jpg') }}"></li>
-            <li><img src="{{ asset('assets/images/IMG-20240820-WA0144.jpg') }}"></li>
-            <li><img src="{{ asset('assets/images/IMG-20240820-WA0154.jpg') }}"></li>
-            <li><img src="{{ asset('assets/images/IMG-20240820-WA0162.jpg') }}"> </li>
-            <li><img src="{{ asset('assets/images/IMG-20240821-WA0081.jpg') }}"></li>
+            <li><img src="{{ asset('assets/images/IMG-20200120-WA0014.jpg') }}"></li>
+            <li><img src="{{ asset('assets/images/13012-scaled.jpg') }}"></li>
+            <li><img
+                    src="{{ asset('assets/images/Formacion-Carretillas-elevadoras-Fundacion-Cepaim-Sevilla-Macarena2.jpg') }}">
+            </li>
+            <li><img src="{{ asset('assets/images/4c4461_cea9ceeb0ed246e5af068aea9eed2752~mv2.webp') }}"></li>
+            <li><img src="{{ asset('assets/images/800-Crane-Services-300x300.jpg') }}"></li>
+            <li><img src="{{ asset('assets/images/DW-Forklift-Training-in-Birmingham-126-576x705.jpeg') }}"></li>
+            <li><img src="{{ asset('assets/images/finition1.jpg') }}"></li>
+            <li><img src="{{ asset('assets/images/OIP (7).jfif') }}"></li>
+            <li><img src="{{ asset('assets/images/OIP (11).jfif') }}"></li>
+            <li><img src="{{ asset('assets/images/OIP (8).jfif') }}"> </li>
+            <li><img
+                src="{{ asset('assets/images/construction-nouvelle-route-camion-benne-decharge-du-sable_220838-497.jpg') }}">
+            </li>
 
         </ul>
     </div>
